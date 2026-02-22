@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Zippy Ride - Manager Reporting &amp; Commission</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ec6d",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#102218",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<!-- iOS Status Bar Placeholder -->
+<div class="h-12 w-full flex items-center justify-between px-6 pt-2">
+<span class="text-sm font-bold">9:41</span>
+<div class="flex gap-1.5 items-center">
+<span class="material-symbols-outlined text-sm">signal_cellular_4_bar</span>
+<span class="material-symbols-outlined text-sm">wifi</span>
+<span class="material-symbols-outlined text-sm">battery_full</span>
+</div>
+</div>
+<!-- Top Navigation -->
+<header class="flex items-center justify-between px-4 py-3 bg-background-light dark:bg-background-dark sticky top-0 z-10">
+<button class="p-2 hover:bg-slate-200 dark:hover:bg-slate-800 rounded-full transition-colors">
+<span class="material-symbols-outlined">arrow_back_ios</span>
+</button>
+<h1 class="text-lg font-bold tracking-tight">Reporting &amp; Commission</h1>
+<button class="p-2 hover:bg-slate-200 dark:hover:bg-slate-800 rounded-full transition-colors">
+<span class="material-symbols-outlined">ios_share</span>
+</button>
+</header>
+<main class="flex-1 overflow-y-auto px-4 pb-24">
+<!-- Segmented Control -->
+<div class="flex p-1 bg-slate-200/50 dark:bg-slate-800/50 rounded-xl my-4">
+<button class="flex-1 py-2 text-sm font-semibold rounded-lg bg-white dark:bg-slate-700 shadow-sm">Daily</button>
+<button class="flex-1 py-2 text-sm font-semibold text-slate-500 dark:text-slate-400">Weekly</button>
+<button class="flex-1 py-2 text-sm font-semibold text-slate-500 dark:text-slate-400">Monthly</button>
+</div>
+<!-- Metric Widgets (Horizontal Scroll) -->
+<div class="flex gap-3 overflow-x-auto hide-scrollbar pb-2">
+<div class="flex flex-col min-w-[160px] bg-white dark:bg-slate-800 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700">
+<span class="text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">Today's Revenue</span>
+<span class="text-xl font-extrabold mt-1">$4,250.00</span>
+<span class="text-xs font-bold text-primary mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">trending_up</span> +12.5%
+                </span>
+</div>
+<div class="flex flex-col min-w-[160px] bg-white dark:bg-slate-800 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700">
+<span class="text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">Active Drivers</span>
+<span class="text-xl font-extrabold mt-1">124</span>
+<span class="text-xs font-bold text-primary mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">person</span> +4%
+                </span>
+</div>
+<div class="flex flex-col min-w-[160px] bg-white dark:bg-slate-800 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700">
+<span class="text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">Commission</span>
+<span class="text-xl font-extrabold mt-1">$637.50</span>
+<span class="text-xs font-bold text-red-500 mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">trending_down</span> -2%
+                </span>
+</div>
+</div>
+<!-- Commission Settings Section -->
+<section class="mt-8">
+<div class="flex items-center justify-between mb-4">
+<h2 class="text-xl font-bold">Commission Settings</h2>
+<span class="text-primary text-sm font-bold">Manage Rates</span>
+</div>
+<div class="bg-white dark:bg-slate-800 p-5 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 space-y-6">
+<!-- Global Toggle -->
+<div class="flex items-center justify-between">
+<div>
+<p class="font-bold">Standard Commision</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Apply to all standard rides</p>
+</div>
+<div class="w-12 h-6 bg-primary rounded-full relative">
+<div class="absolute right-0.5 top-0.5 bg-white w-5 h-5 rounded-full shadow-sm"></div>
+</div>
+</div>
+<!-- Input Groups -->
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-2">
+<label class="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase">Economy Rate</label>
+<div class="flex items-center bg-slate-50 dark:bg-slate-900 rounded-xl px-3 py-2 border border-slate-200 dark:border-slate-700">
+<input class="bg-transparent border-none focus:ring-0 text-lg font-bold w-full p-0" type="text" value="15"/>
+<span class="font-bold text-slate-400">%</span>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase">Premium Rate</label>
+<div class="flex items-center bg-slate-50 dark:bg-slate-900 rounded-xl px-3 py-2 border border-slate-200 dark:border-slate-700">
+<input class="bg-transparent border-none focus:ring-0 text-lg font-bold w-full p-0" type="text" value="22"/>
+<span class="font-bold text-slate-400">%</span>
+</div>
+</div>
+</div>
+<!-- Peak Mode Toggle -->
+<div class="pt-4 border-t border-slate-100 dark:border-slate-700">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-orange-500">bolt</span>
+<p class="font-bold">Peak Pricing Boost</p>
+</div>
+<div class="w-12 h-6 bg-slate-200 dark:bg-slate-700 rounded-full relative">
+<div class="absolute left-0.5 top-0.5 bg-white w-5 h-5 rounded-full shadow-sm"></div>
+</div>
+</div>
+<p class="text-xs text-slate-500 dark:text-slate-400 mb-4">Automated peak detection is currently active for downtown areas.</p>
+<button class="w-full bg-primary/20 text-slate-900 dark:text-slate-100 font-bold py-3 rounded-xl border border-primary/30 transition-all active:scale-95">
+                        Save Changes
+                    </button>
+</div>
+</div>
+</section>
+<!-- Daily Revenue Breakdown -->
+<section class="mt-8">
+<div class="flex items-center justify-between mb-4">
+<h2 class="text-xl font-bold text-slate-900 dark:text-slate-100">Daily Breakdown</h2>
+<button class="text-sm font-bold text-primary">View All</button>
+</div>
+<div class="space-y-3">
+<!-- Row 1 -->
+<div class="bg-white dark:bg-slate-800 p-4 rounded-xl flex items-center justify-between shadow-sm border border-slate-100 dark:border-slate-700">
+<div class="flex items-center gap-4">
+<div class="size-10 bg-slate-50 dark:bg-slate-900 rounded-lg flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">calendar_today</span>
+</div>
+<div>
+<p class="font-bold text-sm">Oct 24, 2023</p>
+<p class="text-xs text-slate-500">142 Rides</p>
+</div>
+</div>
+<div class="text-right">
+<p class="font-bold text-sm">$2,450.00</p>
+<p class="text-xs text-primary font-medium">Comm: $367.50</p>
+</div>
+</div>
+<!-- Row 2 -->
+<div class="bg-white dark:bg-slate-800 p-4 rounded-xl flex items-center justify-between shadow-sm border border-slate-100 dark:border-slate-700">
+<div class="flex items-center gap-4">
+<div class="size-10 bg-slate-50 dark:bg-slate-900 rounded-lg flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">calendar_today</span>
+</div>
+<div>
+<p class="font-bold text-sm">Oct 23, 2023</p>
+<p class="text-xs text-slate-500">128 Rides</p>
+</div>
+</div>
+<div class="text-right">
+<p class="font-bold text-sm">$1,980.50</p>
+<p class="text-xs text-primary font-medium">Comm: $297.08</p>
+</div>
+</div>
+<!-- Row 3 -->
+<div class="bg-white dark:bg-slate-800 p-4 rounded-xl flex items-center justify-between shadow-sm border border-slate-100 dark:border-slate-700">
+<div class="flex items-center gap-4">
+<div class="size-10 bg-slate-50 dark:bg-slate-900 rounded-lg flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">calendar_today</span>
+</div>
+<div>
+<p class="font-bold text-sm">Oct 22, 2023</p>
+<p class="text-xs text-slate-500">165 Rides</p>
+</div>
+</div>
+<div class="text-right">
+<p class="font-bold text-sm">$3,120.00</p>
+<p class="text-xs text-primary font-medium">Comm: $468.00</p>
+</div>
+</div>
+</div>
+<p class="text-center text-slate-400 dark:text-slate-500 text-[10px] mt-8 uppercase tracking-[0.2em]">Last updated: Today, 09:41 AM</p>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 right-0 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-t border-slate-200 dark:border-slate-800 px-6 pb-6 pt-2 flex items-center justify-between z-20">
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-bold">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined">steering_wheel_heat</span>
+<span class="text-[10px] font-bold">Drivers</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">bar_chart</span>
+<span class="text-[10px] font-bold">Reports</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="text-[10px] font-bold">Payouts</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-bold">Settings</span>
+</a>
+</nav>
+</body></html>

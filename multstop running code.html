@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Zippy Ride - Super Admin Verification</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ec6d",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#102218",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased overflow-hidden h-screen w-full">
+<!-- iOS Status Bar Placeholder -->
+<div class="h-11 w-full bg-background-light dark:bg-background-dark flex items-center justify-between px-6 pt-4">
+<span class="text-sm font-bold">9:41</span>
+<div class="flex items-center space-x-2">
+<span class="material-icons text-sm">signal_cellular_alt</span>
+<span class="material-icons text-sm">wifi</span>
+<span class="material-icons text-sm">battery_full</span>
+</div>
+</div>
+<!-- Navigation Header -->
+<header class="bg-background-light dark:bg-background-dark border-b border-slate-200 dark:border-slate-800 px-4 py-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center">
+<button class="mr-3">
+<span class="material-icons text-slate-500">arrow_back_ios</span>
+</button>
+<div>
+<h1 class="text-lg font-bold">Verification Queue</h1>
+<p class="text-[10px] text-slate-500 uppercase tracking-widest font-semibold">128 Pending Globally</p>
+</div>
+</div>
+<button class="bg-primary/10 text-primary p-2 rounded-full">
+<span class="material-icons">filter_list</span>
+</button>
+</div>
+</header>
+<!-- Priority Queue Strip -->
+<div class="bg-white dark:bg-slate-900 py-3 border-b border-slate-200 dark:border-slate-800">
+<div class="flex overflow-x-auto space-x-4 px-4 no-scrollbar">
+<!-- Active Item -->
+<div class="flex-shrink-0 relative">
+<div class="w-14 h-14 rounded-full p-0.5 border-2 border-primary">
+<img class="w-full h-full rounded-full object-cover" data-alt="Close up portrait of male driver" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLJak1M4GryKYP-LHK6WwCnUgK3ju-MRXFz5-_eJNDDTvhsnaXVJqd2UU7Ft8bWbyJ35-tfNhok6WAePgGjFJqxzIBI4-6XgTuliCbuVwIjM7k7N77Sfw41eB25VwvNLVZTQyQ8rPi_6v_ieJD6KFD-Qz6KhFd54yVL8OGgLAYUkrtN_UlvP49yRmS-A8S9ia8yRAOtIihVJVomn0k24zQ55IGbKIQHKzxF2BpF92SuUGjjoHX6EP1VkQBrRlU37IxPPuvd-XJDzQ"/>
+</div>
+<div class="absolute -bottom-1 left-1/2 -translate-x-1/2 bg-primary text-[8px] text-slate-900 font-bold px-1.5 py-0.5 rounded-full uppercase">Review</div>
+</div>
+<!-- Next Items -->
+<div class="flex-shrink-0">
+<div class="w-14 h-14 rounded-full p-0.5 border-2 border-transparent bg-slate-100 dark:bg-slate-800">
+<img class="w-full h-full rounded-full object-cover opacity-60" data-alt="Close up portrait of female driver" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6rn1r5G1yWLj6W--cq4vci99j2_TgwVpj0UL6HkPsQHdcxKbQiueu1lTn1NtdeSTuckgEHjTQMf237NzWl0B_pPAVKV8FWWlULfY1jNLJVJTkY_WRdhePKU2lWOCOUgMCovW1w9gxT_SQ5B3ybv4Dt4zdTeqc2-dDdUoE-FQB3COpP-Jsz5at8uocHpMm0XuXqStlJ5iyJz8t6XJdwARFoOu5tzb2R60AMd9EW-tcs1F6ZqS11iESjaIad07a-9OqeYz7dRe8td0"/>
+</div>
+</div>
+<div class="flex-shrink-0">
+<div class="w-14 h-14 rounded-full p-0.5 border-2 border-transparent bg-slate-100 dark:bg-slate-800">
+<img class="w-full h-full rounded-full object-cover opacity-60" data-alt="Middle aged male driver profile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxHF5_3te9PuAvFqlcfzxskgLYtN8ZS7DbmqmHxyymZ0gCvj_s0dkq-fd1A3Kq-a0r96jmR7NK9X30ap-8NLhFwfJvIkeaP9oBkhLSH1Cagc8mCVy3K3svgMBz5_cIcAamAyijO6ezPNYmT3EMTFlarRwldlsgGI4zusynJVRVWu9IQfZ4wt8gW0qsCYdJ7HSTHJwf77zcqf2i1dJj0xF5l4FK9lR80CtMUysNpAiVsVjOplvq_H5EnAZHf30TwS_Prhtn_pirSEM"/>
+</div>
+</div>
+<div class="flex-shrink-0">
+<div class="w-14 h-14 rounded-full p-0.5 border-2 border-transparent bg-slate-100 dark:bg-slate-800">
+<img class="w-full h-full rounded-full object-cover opacity-60" data-alt="Professional female driver profile photo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACDL2H4IF8DUB0hrOScHIa1ba__5n3o_Qcvb4E6TSjL0jFxHchsymELK3NnXTQ2hdiXUCHZQffA_jvuUsaHeCniQ3mVBFLf2VHaB7AtmcXVBSEcBXBSDvbojjnsacfDDVdQhH_PG9CAQg0iJmbqnncWksz5S4RpTesJrdzKiMy7HShu6klutUCg79JKXroomAxcZ6CVABgQ-eaDEMHl1g-byRb-vUzesCa5nwcH59CYZGc4SWX87nS2ODasgj7Wk_SatRme6YClHw"/>
+</div>
+</div>
+<div class="flex-shrink-0">
+<div class="w-14 h-14 rounded-full p-0.5 border-2 border-transparent bg-slate-100 dark:bg-slate-800">
+<div class="w-full h-full rounded-full flex items-center justify-center text-slate-400 bg-slate-100 dark:bg-slate-800">
+<span class="text-xs font-bold">+124</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Workspace Scrollable Area -->
+<main class="h-[calc(100vh-280px)] overflow-y-auto px-4 py-6 space-y-6 pb-32 no-scrollbar">
+<!-- Driver Profile Summary -->
+<section class="bg-white dark:bg-slate-900 rounded-xl p-4 shadow-sm border border-slate-200 dark:border-slate-800">
+<div class="flex items-start justify-between mb-4">
+<div class="flex items-center space-x-3">
+<div class="w-16 h-16 bg-slate-100 dark:bg-slate-800 rounded-lg overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Main profile photo of applicant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhZFdQnCiV7BeBwI5s5NUkD_FtG26pDAiJRzo_zy2-qXscTiBBWqeoV5nsUVLvnPNBAE-C0nfWom7-8YeWZVwHKFy6dodJ9aPSwrWS9QOfcRgQqm75klMr_GSDY5QHdfPV-5Jhgc-n0-aWj-krgo4UgZ945u6Pfuj85fik3lhnbMXtP_MZJ-FQnFBD7Xwpe5iPm8SZjapATv9YrbJ7zz4nibXF-UErrU7gADHb71YTMFdjR5oTSXvfd2pwTYV7AZ9ZXBc_3Y1Ay2o"/>
+</div>
+<div>
+<h2 class="text-lg font-bold">Marcus Sterling</h2>
+<div class="flex items-center text-slate-500 text-xs">
+<span class="material-icons text-[14px] mr-1">location_on</span>
+                            Berlin, Germany
+                        </div>
+<span class="inline-block mt-1 px-2 py-0.5 bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-400 text-[10px] font-bold rounded uppercase">Flagged: Low Res ID</span>
+</div>
+</div>
+<div class="text-right">
+<p class="text-[10px] text-slate-400 font-bold uppercase">Application ID</p>
+<p class="font-mono text-sm">#ZP-8829-BS</p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4 pt-4 border-t border-slate-100 dark:border-slate-800">
+<div>
+<p class="text-[10px] text-slate-400 font-bold uppercase">Phone</p>
+<p class="text-sm">+49 152 4920 182</p>
+</div>
+<div>
+<p class="text-[10px] text-slate-400 font-bold uppercase">Join Date</p>
+<p class="text-sm">Oct 24, 2023</p>
+</div>
+</div>
+</section>
+<!-- Identity Documents -->
+<section class="space-y-3">
+<div class="flex items-center justify-between">
+<h3 class="text-xs font-bold text-slate-500 uppercase tracking-widest px-1">Identity Documents</h3>
+<span class="text-[10px] font-bold text-primary bg-primary/10 px-2 py-0.5 rounded-full">2 Files</span>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<div class="relative group">
+<div class="aspect-[3/2] rounded-lg overflow-hidden border border-slate-200 dark:border-slate-800">
+<img class="w-full h-full object-cover" data-alt="Front view of European driver license" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHeD6sjSgnazexWr8GezhNi0LW_MbCzbgiuTOagDCPIluThZGJr4d_sOKKacPOdfQt1jxkPMKC9QPygSHBXvfPtzalD44i4IdVkhbcSjMXZ9493P0E9kKxluJ-OcIVGciXZV9Hu6beLUCEtlVIuaOp0_jidspGHuV1HPCIMGTIMyqjU_Npiw4iO4HXiTwrWmBMtpSdYAdfJpgK21-CU6_MNXZR8ZT_wAmIuOv9L73WUensu0avIAiZU8bE5urPywwgQSYTWMwdMMg"/>
+<div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-icons text-white">zoom_in</span>
+</div>
+</div>
+<p class="text-[10px] mt-1 text-center font-semibold text-slate-500">License Front</p>
+</div>
+<div class="relative group">
+<div class="aspect-[3/2] rounded-lg overflow-hidden border border-slate-200 dark:border-slate-800">
+<img class="w-full h-full object-cover" data-alt="Back view of identification document" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQXLWjK0ZPYwDahQ9FSG2cEmFxq5gkcgB1HUesW0qFMZ47MO_nOkAkN2LyXFHYC9RLOcXhU-3pzPBj7PKI8lTwCLaT51tOc7a6b-xLzWnc71-cStF-omJwrLHP1M-Uq-ZFZEYVWiSUNvrqL4biSTf1_pL5UNJDGkgkXiUm9UY_Q2fKXyZLKCOzgz06_hvOKU_ocGxNGGFhe6ytOyBq5SE_9V5CnUQOI97V5vU3hU43ggNOBfFI3ZqNKCycUNWsPnf08Uq5qzD8qKo"/>
+<div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-icons text-white">zoom_in</span>
+</div>
+</div>
+<p class="text-[10px] mt-1 text-center font-semibold text-slate-500">License Back</p>
+</div>
+</div>
+</section>
+<!-- Vehicle Details -->
+<section class="space-y-3">
+<div class="flex items-center justify-between">
+<h3 class="text-xs font-bold text-slate-500 uppercase tracking-widest px-1">Vehicle Verification</h3>
+<span class="text-[10px] font-bold text-blue-500 bg-blue-500/10 px-2 py-0.5 rounded-full">Tesla Model 3</span>
+</div>
+<div class="bg-white dark:bg-slate-900 rounded-xl overflow-hidden shadow-sm border border-slate-200 dark:border-slate-800">
+<div class="relative h-40">
+<img class="w-full h-full object-cover" data-alt="Side profile of a white Tesla Model 3" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-R7D9DGrKg0I6of0WGZh0-wCvo0YbM4Sxj6w2qeHF2ZitDqZJh2osrVmWR3OlYGA7LgQPWXrgngTtHmTyXVaMKmJGuyWQEXpo6AAUCcJsuXoDxIR8LEtXFr3E3SpE9gqlfSwbP0asifCxT-A-BAoC4efGRBImcLF95XMN0f1b4qQn7VpdGRVSZM38S5mNFPcEOLXzNbZlR7KiX9VfzPEySFFdpMh_vOwgPUru0TjpTRHzWNKCloZbWVgwWFGR6KU5dHkTTmopN3c"/>
+<div class="absolute bottom-2 right-2 bg-black/60 backdrop-blur-md px-2 py-1 rounded text-white text-[10px] font-bold">
+                        Plate: B-ZY-2023
+                    </div>
+</div>
+<div class="p-3 grid grid-cols-3 gap-2">
+<div class="aspect-square rounded-lg overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Interior dashboard of modern electric vehicle" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJh2a0VmEbQdb_sMzsUwmuAhq_0a75MvQ8Rk9I3VUoK6OzfXcxEyu4jpOGKfp3gAVxR5m1lkDoV15f7QrCD-ijWdj4XguUAaeAc8RdJpw0iT3dZV2ubkjFf26W-HMas0Pu1h8BYa9veBbBA8PmyAoCXYJrf9vDX7jG6Fjb4Ziv3r_nB0xcxeyCn14xZ97ulpPADLgcGmcnLkLnt99NpIXpz7MASjR3PVnhlaORVgAH2x08eyulpbAdWyrekYpo0N5qbLQ1Sg_Pg7Q"/>
+</div>
+<div class="aspect-square rounded-lg overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Close up of vehicle tire and rim" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMSYX9p7gCRtUqXMaIRNCaoaqoOvIongb7J-ToC3b-dPGZ_dYUQgFHk1kAEMPP4tfCSanlloM8iBkdeDcBc3W1PCePTrk6uTqgW_nN-ZQuLArFpwtXWZOOy6e865m5xH50jIk-KNIHuZ62uGYLSJLpdGuZ0zHCVtMSEgxWXDmr5MPNjpUOJFTUeKG9rn32hbNQELZI-m8VtAskkzYdnlTN9cM0p0qyLl1wOWV83X5DTUoo4J-sT9AeLgwquevSHm77FFiwwy5SEBo"/>
+</div>
+<div class="aspect-square rounded-lg overflow-hidden border-2 border-dashed border-slate-200 dark:border-slate-700 flex items-center justify-center bg-slate-50 dark:bg-slate-800">
+<span class="material-icons text-slate-300">add_photo_alternate</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Background Check & Health -->
+<section class="space-y-3">
+<h3 class="text-xs font-bold text-slate-500 uppercase tracking-widest px-1">Background Status</h3>
+<div class="bg-white dark:bg-slate-900 rounded-xl p-4 shadow-sm border border-slate-200 dark:border-slate-800 space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-2">
+<span class="material-icons text-primary">verified_user</span>
+<span class="text-sm font-medium">Criminal Record Check</span>
+</div>
+<span class="text-[10px] font-bold text-primary">CLEARED</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-2">
+<span class="material-icons text-yellow-500">history</span>
+<span class="text-sm font-medium">Driving Offense History</span>
+</div>
+<span class="text-[10px] font-bold text-yellow-500">1 MINOR (2019)</span>
+</div>
+</div>
+</section>
+<!-- Admin Note -->
+<section class="space-y-3">
+<h3 class="text-xs font-bold text-slate-500 uppercase tracking-widest px-1">Internal Notes</h3>
+<textarea class="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-3 text-sm focus:ring-primary focus:border-primary" placeholder="Add a note for the next reviewer..." rows="3"></textarea>
+</section>
+</main>
+<!-- Sticky iOS Action Bar -->
+<div class="fixed bottom-0 left-0 right-0 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border-t border-slate-200 dark:border-slate-800 px-6 pt-4 pb-10 flex space-x-4">
+<button class="flex-1 bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-slate-100 font-bold py-4 rounded-xl flex items-center justify-center space-x-2">
+<span class="material-icons text-red-500">close</span>
+<span>Reject</span>
+</button>
+<button class="flex-[2] bg-primary text-slate-900 font-bold py-4 rounded-xl shadow-lg shadow-primary/20 flex items-center justify-center space-x-2">
+<span class="material-icons">check_circle</span>
+<span>Approve Driver</span>
+</button>
+</div>
+<!-- Home Indicator -->
+<div class="fixed bottom-1 left-1/2 -translate-x-1/2 w-32 h-1 bg-slate-300 dark:bg-slate-700 rounded-full"></div>
+<style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</body></html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Zippy Ride - Login</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#13ec6d",
+              "background-light": "#f6f8f7",
+              "background-dark": "#102218",
+            },
+            fontFamily: {
+              "display": ["Plus Jakarta Sans", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex items-center justify-center p-4">
+<!-- Main Container (Phone Form Factor) -->
+<div class="relative w-full max-w-[400px] bg-white dark:bg-slate-900 rounded-3xl shadow-2xl overflow-hidden flex flex-col min-h-[812px] border border-slate-100 dark:border-slate-800">
+<!-- Subtle Geometric Accents Background -->
+<div class="absolute inset-0 pointer-events-none opacity-5 dark:opacity-10 overflow-hidden">
+<div class="absolute -top-10 -right-10 w-40 h-40 rounded-full border-[10px] border-primary"></div>
+<div class="absolute top-40 -left-20 w-60 h-60 rounded-full border-[2px] border-primary"></div>
+<div class="absolute bottom-20 right-0 w-32 h-32 rotate-45 border-[15px] border-primary/40"></div>
+</div>
+<!-- Top Navigation Area -->
+<div class="flex items-center justify-between p-6 z-10">
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined">arrow_back_ios_new</span>
+</button>
+<div class="w-10 h-10"></div> <!-- Spacer -->
+</div>
+<!-- Branding Section -->
+<div class="flex flex-col items-center px-8 pt-4 pb-8 z-10 text-center">
+<div class="bg-primary/20 p-4 rounded-2xl mb-4">
+<span class="material-symbols-outlined text-primary text-5xl" style="font-variation-settings: 'FILL' 1">bolt</span>
+</div>
+<h1 class="text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-2">Zippy Ride</h1>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Your fast track to anywhere</p>
+</div>
+<!-- Form Section -->
+<div class="flex-1 px-8 z-10">
+<div class="space-y-5">
+<!-- Email/Phone Input -->
+<div class="space-y-1.5">
+<label class="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 ml-1">Email or Phone</label>
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400 group-focus-within:text-primary transition-colors">
+<span class="material-symbols-outlined text-xl">person</span>
+</div>
+<input class="block w-full pl-11 pr-4 py-4 bg-slate-50 dark:bg-slate-800/50 border-none rounded-xl text-slate-900 dark:text-white placeholder:text-slate-400 focus:ring-2 focus:ring-primary/50 transition-all" placeholder="driver@zippyride.com" type="text"/>
+</div>
+</div>
+<!-- Password Input -->
+<div class="space-y-1.5">
+<div class="flex justify-between items-center px-1">
+<label class="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">Password</label>
+</div>
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400 group-focus-within:text-primary transition-colors">
+<span class="material-symbols-outlined text-xl">lock</span>
+</div>
+<input class="block w-full pl-11 pr-12 py-4 bg-slate-50 dark:bg-slate-800/50 border-none rounded-xl text-slate-900 dark:text-white placeholder:text-slate-400 focus:ring-2 focus:ring-primary/50 transition-all" placeholder="••••••••" type="password"/>
+<button class="absolute inset-y-0 right-0 pr-4 flex items-center text-slate-400 hover:text-slate-600 transition-colors">
+<span class="material-symbols-outlined text-xl">visibility</span>
+</button>
+</div>
+</div>
+<!-- Forgot Password -->
+<div class="text-right">
+<a class="text-sm font-semibold text-primary hover:text-primary/80 transition-colors" href="#">Forgot Password?</a>
+</div>
+<!-- Login Button -->
+<button class="w-full bg-primary hover:bg-primary/90 text-slate-900 font-bold py-4 rounded-xl shadow-lg shadow-primary/20 active:scale-[0.98] transition-all flex items-center justify-center gap-2">
+<span>Log In</span>
+<span class="material-symbols-outlined text-xl">arrow_forward</span>
+</button>
+</div>
+<!-- Divider -->
+<div class="relative my-10">
+<div aria-hidden="true" class="absolute inset-0 flex items-center">
+<div class="w-full border-t border-slate-100 dark:border-slate-800"></div>
+</div>
+<div class="relative flex justify-center text-sm">
+<span class="px-4 bg-white dark:bg-slate-900 text-slate-400 font-medium">Or continue with</span>
+</div>
+</div>
+<!-- Social Login -->
+<div class="grid grid-cols-2 gap-4">
+<button class="flex items-center justify-center gap-2 py-3.5 border border-slate-100 dark:border-slate-800 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+<img class="w-5 h-5" data-alt="Google logo icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDF8kbhtAfz4R9zDjNDuSlOuDYdWu45M5AL7r6x2PwQMLAraSK23FkG0Uxhsf5k4cc-8jPYAKYMpYrAFi7zaeUaDZvBb_uWvs6dSHuQyWQHaUWmf8pSRYi_7zBa8QvwYZUltEarfmiGs77yHfKSod4iN80pQQImT-pMjfNcsmjg4BLL7AV_4zZr8DmqGy-G8wEq5RgMoRlmIati7ZCvlpHgYixqsk7xeEncvPpaSLK3867SdqvYqHtpPy47ReHtuT8dUkmciRhpFyE"/>
+<span class="text-sm font-bold text-slate-700 dark:text-slate-300">Google</span>
+</button>
+<button class="flex items-center justify-center gap-2 py-3.5 border border-slate-100 dark:border-slate-800 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+<img class="w-5 h-5 dark:invert" data-alt="Apple logo icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtOE7ydL4QaIpZQ5N1AG6gnW4R2Pt00NUc7kpQ8cJ3ItDSR_0SJ_2hgEeyZWR571ZxJJqKBrbVLlV4zyqccvzp7SjvOJ4e7874WNCerPGmm_ZKs2yxI_fyBJfWgUCXHpdD9ebhvV6FeJLdQJ6ZG2elgdalCOyCO8fnG3sWuyRJKG0Z4RTHSvp_ZwtkfPqo2Aitg5VpiuD5MrJ8odnXDbrWS5boXrJSHSGwl6wg5OJ72iFN63NprgQwii0S-8bJ9gMn3ov2Vo3TWYw"/>
+<span class="text-sm font-bold text-slate-700 dark:text-slate-300">Apple</span>
+</button>
+</div>
+</div>
+<!-- Footer -->
+<div class="p-8 text-center z-10">
+<p class="text-slate-500 dark:text-slate-400 text-sm">
+                Don't have an account? 
+                <a class="text-primary font-bold hover:underline ml-1" href="#">Sign Up</a>
+</p>
+</div>
+<!-- Subtle Gradient Bottom Bar (iOS indicator style) -->
+<div class="mt-auto h-1.5 w-32 bg-slate-200 dark:bg-slate-700 rounded-full mx-auto mb-2"></div>
+</div>
+</body></html>

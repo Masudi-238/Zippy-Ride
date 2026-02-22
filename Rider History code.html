@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Zippy Ride - History</title>
+<!-- Tailwind CSS with plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#13ec6d",
+              "background-light": "#f6f8f7",
+              "background-dark": "#102218",
+            },
+            fontFamily: {
+              "display": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .ios-blur {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<!-- iOS Status Bar Spacer (Simulated) -->
+<div class="h-11 w-full bg-background-light dark:bg-background-dark sticky top-0 z-50">
+<div class="flex justify-between items-center px-6 h-full text-xs font-bold">
+<span>9:41</span>
+<div class="flex gap-1.5 items-center">
+<span class="material-symbols-outlined text-[14px]">signal_cellular_4_bar</span>
+<span class="material-symbols-outlined text-[14px]">wifi</span>
+<span class="material-symbols-outlined text-[18px]">battery_full</span>
+</div>
+</div>
+</div>
+<!-- Header -->
+<header class="sticky top-11 z-40 bg-background-light/80 dark:bg-background-dark/80 ios-blur px-4 py-3 border-b border-primary/10">
+<div class="flex items-center justify-between mb-4">
+<h1 class="text-2xl font-800 tracking-tight">Ride History</h1>
+<button class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">search</span>
+</button>
+</div>
+<!-- Tabs -->
+<div class="flex gap-2 p-1 bg-slate-200/50 dark:bg-slate-800/50 rounded-xl">
+<button class="flex-1 py-2 text-sm font-bold rounded-lg bg-white dark:bg-slate-700 shadow-sm">All</button>
+<button class="flex-1 py-2 text-sm font-semibold text-slate-500 dark:text-slate-400">Completed</button>
+<button class="flex-1 py-2 text-sm font-semibold text-slate-500 dark:text-slate-400">Cancelled</button>
+</div>
+</header>
+<!-- Content Area -->
+<main class="flex-1 px-4 py-6 space-y-4 pb-24 overflow-y-auto">
+<!-- Ride Card 1 -->
+<div class="bg-white dark:bg-slate-900 rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-slate-100 dark:border-slate-800 overflow-hidden">
+<div class="p-4 border-b border-slate-50 dark:border-slate-800 flex justify-between items-center">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-lg">check_circle</span>
+</div>
+<div>
+<p class="text-[10px] uppercase tracking-wider font-bold text-primary">Completed</p>
+<p class="text-sm font-bold">Oct 24, 2023 • 02:30 PM</p>
+</div>
+</div>
+<p class="text-lg font-800 text-slate-900 dark:text-white">$14.50</p>
+</div>
+<div class="p-4 flex gap-4">
+<div class="w-24 h-24 rounded-lg bg-slate-100 dark:bg-slate-800 flex-shrink-0 overflow-hidden bg-cover bg-center" data-alt="Map showing a short city route from SFO" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCzifIWN5ZQ0cA4O3fyLQzMmRgCvP5dNENuNCeJGy_PH4v36ygDs_xKHBCdd-fmTvMWtt73-l9xRcjjpMVtPpyXm4pDtcpY882YlzO9DoVYy3pwcR4tm5jObXaeTa3DiZMR-GU6u3OUtRJhMd-0bVkuRS7JReqVJGTnNn-6zWjdlM9E52hpCQ53aCZ2c3iD-mzakWjk7ZYWnIT825HLtn22JNZyTLIe7kjKZtNTsfOwcczxWgoN9ZuAc4jl8OpN0fj5mlCkgrdZZm4');"></div>
+<div class="flex-1 flex flex-col justify-between">
+<div class="space-y-1">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-slate-400 text-sm mt-0.5">trip_origin</span>
+<p class="text-xs text-slate-500 line-clamp-1">Terminal 2, SFO Airport</p>
+</div>
+<div class="w-px h-2 bg-slate-300 dark:bg-slate-700 ml-1.5"></div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-sm mt-0.5">location_on</span>
+<p class="text-xs font-medium line-clamp-1">123 Maple St, San Francisco</p>
+</div>
+</div>
+<div class="flex items-center gap-2 mt-2">
+<span class="material-symbols-outlined text-slate-400 text-base">directions_car</span>
+<p class="text-xs text-slate-500">Zippy Basic</p>
+</div>
+</div>
+</div>
+<div class="px-4 pb-4 flex gap-3">
+<button class="flex-1 h-10 bg-primary text-slate-900 font-bold rounded-lg text-sm flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-lg">star</span>
+                    Rate Ride
+                </button>
+<button class="flex-1 h-10 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-bold rounded-lg text-sm flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-lg">rebase_edit</span>
+                    Rebook
+                </button>
+</div>
+</div>
+<!-- Ride Card 2 -->
+<div class="bg-white dark:bg-slate-900 rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-slate-100 dark:border-slate-800 overflow-hidden">
+<div class="p-4 border-b border-slate-50 dark:border-slate-800 flex justify-between items-center">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-lg">check_circle</span>
+</div>
+<div>
+<p class="text-[10px] uppercase tracking-wider font-bold text-primary">Completed</p>
+<p class="text-sm font-bold">Oct 21, 2023 • 08:15 AM</p>
+</div>
+</div>
+<p class="text-lg font-800 text-slate-900 dark:text-white">$32.00</p>
+</div>
+<div class="p-4 flex gap-4">
+<div class="w-24 h-24 rounded-lg bg-slate-100 dark:bg-slate-800 flex-shrink-0 overflow-hidden bg-cover bg-center" data-alt="Map showing a downtown city route" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD98BFF-Rk7ywIyg9E9BJlQBPdjmBYwiPIH9ivMvRtnLQ1wQXFPlkSxa10ayuZ5rtEIghYDw4hXeMgISBxEJvi2dr-jK2y5u48Np3eRX49Sd4dYuN7B7ouecya1LGx4PCHrUPwXvrl8jW-g3VgRi2BVvu9p16pD8OjEaEEoDgJIfGcIzqI8BaDm-AelVeJWDLsK7NemluAgfSEZzYC0mg966e7yAp0iMpfxkKVu879j2ORAdTE_FFYxwGj4b15xnY040I4ndU-swuo');"></div>
+<div class="flex-1 flex flex-col justify-between">
+<div class="space-y-1">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-slate-400 text-sm mt-0.5">trip_origin</span>
+<p class="text-xs text-slate-500 line-clamp-1">88 Market St, Financial District</p>
+</div>
+<div class="w-px h-2 bg-slate-300 dark:bg-slate-700 ml-1.5"></div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-sm mt-0.5">location_on</span>
+<p class="text-xs font-medium line-clamp-1">Ocean Beach, Great Hwy</p>
+</div>
+</div>
+<div class="flex items-center gap-2 mt-2">
+<span class="material-symbols-outlined text-slate-400 text-base">auto_awesome</span>
+<p class="text-xs text-slate-500">Zippy XL</p>
+</div>
+</div>
+</div>
+<div class="px-4 pb-4 flex gap-3">
+<div class="flex-1 h-10 flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-primary fill-1">star</span>
+<span class="material-symbols-outlined text-primary fill-1">star</span>
+<span class="material-symbols-outlined text-primary fill-1">star</span>
+<span class="material-symbols-outlined text-primary fill-1">star</span>
+<span class="material-symbols-outlined text-primary">star</span>
+</div>
+<button class="flex-1 h-10 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-bold rounded-lg text-sm flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-lg">rebase_edit</span>
+                    Rebook
+                </button>
+</div>
+</div>
+<!-- Ride Card 3 (Cancelled) -->
+<div class="bg-white dark:bg-slate-900 rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-slate-100 dark:border-slate-800 overflow-hidden opacity-80">
+<div class="p-4 border-b border-slate-50 dark:border-slate-800 flex justify-between items-center">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-red-100 dark:bg-red-900/30 flex items-center justify-center text-red-500">
+<span class="material-symbols-outlined text-lg">cancel</span>
+</div>
+<div>
+<p class="text-[10px] uppercase tracking-wider font-bold text-red-500">Cancelled</p>
+<p class="text-sm font-bold">Oct 19, 2023 • 11:45 PM</p>
+</div>
+</div>
+<p class="text-lg font-800 text-slate-400">$0.00</p>
+</div>
+<div class="p-4 flex gap-4">
+<div class="w-24 h-24 rounded-lg bg-slate-100 dark:bg-slate-800 flex-shrink-0 overflow-hidden bg-cover bg-center grayscale" data-alt="Map showing a canceled trip route" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAXcMKRC8f_FCDCW5rSr24lau0i_VtfsS_ciNwxlnpIOG3fx6yaXYVMe0bFY84dKoJGyKeQti96fuGWJEBg1y7ydA5LgoelNgx9DgtQM_08w2C0jOhX4nM4EHOEoOL82P5BOeOuBhLxUMQ6qk5zJ66V6Fnt9VED1iVY_7nm37F-iMCpVLFfiegS4QBRz-Joulk6f2XN7-zmCdVvjQDxVfqWVO-TJEn88w1U6jnzefacgECDDqBzEZZi03LesmTgOwc59ffW9PSz-Pg');"></div>
+<div class="flex-1 flex flex-col justify-between">
+<div class="space-y-1">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-slate-400 text-sm mt-0.5">trip_origin</span>
+<p class="text-xs text-slate-500 line-clamp-1">The Fillmore, Geary Blvd</p>
+</div>
+<div class="w-px h-2 bg-slate-300 dark:bg-slate-700 ml-1.5"></div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-slate-400 text-sm mt-0.5">location_on</span>
+<p class="text-xs font-medium text-slate-400 line-clamp-1">Home</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 right-0 bg-white/90 dark:bg-slate-900/90 ios-blur border-t border-slate-100 dark:border-slate-800 px-6 pb-8 pt-2 z-50">
+<div class="flex justify-between items-center max-w-md mx-auto">
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined fill-1">history</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">History</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Wallet</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Profile</span>
+</a>
+</div>
+</nav>
+<!-- iOS Home Indicator -->
+<div class="fixed bottom-2 left-1/2 -translate-x-1/2 w-32 h-1 bg-slate-300 dark:bg-slate-700 rounded-full z-[60]"></div>
+</body></html>

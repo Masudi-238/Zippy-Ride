@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Zippy Ride Onboarding</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ec6d",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#102218",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark antialiased">
+<div class="relative flex h-screen w-full max-w-[430px] mx-auto flex-col overflow-hidden bg-background-light dark:bg-background-dark">
+<!-- Top Navigation -->
+<div class="flex items-center justify-end p-6 pt-12">
+<button class="text-slate-900/60 dark:text-slate-100/60 text-base font-semibold hover:text-primary transition-colors">
+                Skip
+            </button>
+</div>
+<!-- Hero Section -->
+<div class="flex-1 flex flex-col items-center justify-center px-6">
+<div class="@container w-full">
+<div class="relative aspect-square w-full rounded-3xl overflow-hidden bg-primary/10 flex items-center justify-center mb-10">
+<!-- 3D Illustration Placeholder -->
+<div class="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent"></div>
+<img alt="3D illustration of a modern car in city" class="w-4/5 h-4/5 object-contain drop-shadow-2xl" data-alt="3D illustration of a sleek modern car in a city" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBo3eYLEDCLDcksEOIjFkvaH4xIhWFDFmDpjVF18LkfcBJ1I0wY1ShbrfPM5Hq0nI3JBIXOHPvX9WpCeozDiTEVrkT8nJNx4W0x1UQxThlLTjSvTB6VYOwxnVSl3KNozydlmgBlVwYD-qxSSfeBnqTo0SNNJcCMbB5AGKiimR3Ctd3ydko3WjEWCTVa_T9QfOmJrIdMMvbUefy6CfGPdvuJkpul57CxbyJHDC-Fm1rylrjMhXpV0wzigKWYPtC4KOkX-O4VWSZQlCg"/>
+</div>
+</div>
+<!-- Content -->
+<div class="text-center space-y-4 max-w-sm">
+<h1 class="text-slate-900 dark:text-slate-100 tracking-tight text-4xl font-extrabold leading-tight">
+                    Welcome to <span class="text-primary">Zippy Ride</span>
+</h1>
+<p class="text-slate-600 dark:text-slate-400 text-lg font-medium leading-relaxed">
+                    Experience the fastest way to get around your city. Reliable rides at your fingertips, anytime, anywhere.
+                </p>
+</div>
+</div>
+<!-- Footer Actions -->
+<div class="p-8 pb-12 space-y-8">
+<!-- Progress Indicator -->
+<div class="flex w-full flex-row items-center justify-center gap-2">
+<div class="h-2 w-6 rounded-full bg-primary"></div>
+<div class="h-2 w-2 rounded-full bg-slate-300 dark:bg-slate-700"></div>
+<div class="h-2 w-2 rounded-full bg-slate-300 dark:bg-slate-700"></div>
+</div>
+<!-- Main Button -->
+<button class="w-full bg-primary hover:bg-primary/90 text-slate-900 font-bold text-lg py-4 px-6 rounded-xl flex items-center justify-center gap-2 transition-all active:scale-[0.98]">
+                Next
+                <span class="material-symbols-outlined font-bold">arrow_forward</span>
+</button>
+</div>
+<!-- Safe Area Decoration for iOS -->
+<div class="h-1 w-32 bg-slate-200 dark:bg-slate-800 rounded-full mx-auto mb-2 opacity-50"></div>
+</div>
+</body></html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Zippy Ride - Driver Onboarding</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ec6d",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#102218",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: "Plus Jakarta Sans", sans-serif;
+        }
+        .ios-shadow {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased">
+<!-- Main Container (iOS Phone Mockup Style) -->
+<div class="relative mx-auto flex h-screen max-w-[430px] flex-col overflow-hidden bg-background-light dark:bg-background-dark">
+<!-- Top App Bar -->
+<div class="flex items-center justify-between p-6">
+<button class="flex h-10 w-10 items-center justify-center rounded-full bg-slate-200/50 dark:bg-slate-800/50 transition-colors hover:bg-slate-200 dark:hover:bg-slate-800">
+<span class="material-symbols-outlined text-slate-900 dark:text-slate-100">arrow_back_ios_new</span>
+</button>
+<div class="flex gap-1.5">
+<div class="h-1.5 w-4 rounded-full bg-slate-300 dark:bg-slate-700"></div>
+<div class="h-1.5 w-4 rounded-full bg-slate-300 dark:bg-slate-700"></div>
+<div class="h-1.5 w-8 rounded-full bg-primary"></div>
+</div>
+<button class="text-sm font-semibold text-slate-400">Skip</button>
+</div>
+<!-- Hero Section -->
+<div class="relative flex flex-1 flex-col items-center justify-center px-6">
+<!-- Visual Representation Container -->
+<div class="relative w-full aspect-square max-w-[320px] mb-8">
+<!-- Abstract Background Circle -->
+<div class="absolute inset-0 scale-95 rounded-full bg-primary/10 blur-3xl"></div>
+<!-- Hero Image Representation -->
+<div class="relative h-full w-full overflow-hidden rounded-3xl bg-slate-200 dark:bg-slate-800 shadow-xl border-4 border-white dark:border-slate-900" data-alt="Friendly driver holding a smartphone showing a positive earnings graph" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD7ySRWowLa6cKZVnA5JuCC07CgV9sfM7nifqr7B7NqZQNIb9k7Uf41greq6MrY5_Lz0_clpk0fG7hiBZxtu92uxczUK7GawkUuoke-OjXmAxWLsBU0YvDfNah5w_gI5WBgTM5xPIjAaM9jP0G27MwF4pfMDN5N6AiCOrigYTPX6uGXodMJTnLTmRRPfqIejjtewi61vsoJ2UHPcnuOUBQOKdRpQ3NktrbHbtK14Yd6xigel5EsL-Z8zI8qEB0bO2in7e1RJQeXreo'); background-size: cover; background-position: center;">
+<!-- Floating Earnings Graph Card -->
+<div class="absolute bottom-6 right-6 w-40 rounded-2xl bg-white/95 p-3 shadow-lg dark:bg-slate-900/95 backdrop-blur-sm">
+<div class="flex items-center justify-between mb-2">
+<span class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Total Earnings</span>
+<span class="material-symbols-outlined text-primary text-sm">trending_up</span>
+</div>
+<div class="text-lg font-bold text-slate-900 dark:text-white mb-1">$1,240.50</div>
+<!-- Simple SVG Graph representation -->
+<svg class="h-8 w-full" fill="none" viewbox="0 0 100 30">
+<path d="M0 25 Q 10 20, 20 22 T 40 15 T 60 18 T 80 8 T 100 5" fill="none" stroke="#13ec6d" stroke-linecap="round" stroke-width="3"></path>
+</svg>
+</div>
+</div>
+</div>
+<!-- Content -->
+<div class="text-center">
+<h1 class="mb-4 text-4xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100">
+                    Drive, Earn, <br/><span class="text-primary">Repeat.</span>
+</h1>
+<p class="mx-auto max-w-[300px] text-base leading-relaxed text-slate-500 dark:text-slate-400">
+                    Join thousands of Zippy Ride drivers. Set your own schedule, track your earnings in real-time, and get paid daily.
+                </p>
+</div>
+</div>
+<!-- Bottom Actions -->
+<div class="p-8 pb-12">
+<!-- Benefit Highlights -->
+<div class="mb-8 grid grid-cols-2 gap-4">
+<div class="flex items-center gap-3 rounded-xl bg-slate-100 dark:bg-slate-800/50 p-3">
+<div class="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/20 text-primary">
+<span class="material-symbols-outlined text-lg">schedule</span>
+</div>
+<span class="text-xs font-bold text-slate-700 dark:text-slate-300">Flexible Hours</span>
+</div>
+<div class="flex items-center gap-3 rounded-xl bg-slate-100 dark:bg-slate-800/50 p-3">
+<div class="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/20 text-primary">
+<span class="material-symbols-outlined text-lg">payments</span>
+</div>
+<span class="text-xs font-bold text-slate-700 dark:text-slate-300">Daily Payouts</span>
+</div>
+</div>
+<button class="w-full rounded-2xl bg-primary py-5 text-center text-lg font-extrabold text-slate-900 shadow-lg shadow-primary/25 transition-transform active:scale-[0.98]">
+                Get Started
+            </button>
+<p class="mt-6 text-center text-sm font-medium text-slate-400">
+                Already have an account? <a class="text-slate-900 dark:text-slate-100 underline decoration-primary decoration-2 underline-offset-4" href="#">Log in</a>
+</p>
+</div>
+<!-- iOS Home Indicator Space -->
+<div class="h-2 w-32 self-center rounded-full bg-slate-200 dark:bg-slate-800 mb-2"></div>
+</div>
+</body></html>

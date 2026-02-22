@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Zippy Ride Registration</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ec6d",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#102218",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .ios-shadow {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<!-- Header Navigation -->
+<header class="sticky top-0 z-10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-4 py-4 flex items-center justify-between border-b border-slate-200 dark:border-slate-800">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-slate-200/50 dark:hover:bg-slate-700/50 transition-colors">
+<span class="material-symbols-outlined text-slate-900 dark:text-slate-100">arrow_back_ios_new</span>
+</button>
+<h1 class="text-lg font-bold tracking-tight">Create Account</h1>
+<div class="w-10"></div> <!-- Spacer for balance -->
+</header>
+<main class="flex-1 px-6 pt-6 pb-24 max-w-md mx-auto w-full">
+<!-- Progress Indicator -->
+<div class="mb-8">
+<div class="flex justify-between items-end mb-2">
+<span class="text-sm font-semibold text-primary uppercase tracking-wider">Step 1 of 3</span>
+<span class="text-xs text-slate-500 dark:text-slate-400">Personal Details</span>
+</div>
+<div class="h-1.5 w-full bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 33.33%"></div>
+</div>
+</div>
+<!-- Title Section -->
+<div class="mb-8">
+<h2 class="text-3xl font-extrabold text-slate-900 dark:text-slate-100 mb-2">Join Zippy Ride</h2>
+<p class="text-slate-600 dark:text-slate-400">Enter your details and choose how you'd like to use the app.</p>
+</div>
+<!-- Role Selector -->
+<div class="mb-8">
+<label class="block text-sm font-bold mb-4 text-slate-700 dark:text-slate-300">Choose your role</label>
+<div class="grid grid-cols-2 gap-4">
+<!-- Rider Option -->
+<label class="relative cursor-pointer group">
+<input checked="" class="peer sr-only" name="role" type="radio" value="rider"/>
+<div class="flex flex-col items-center justify-center p-4 rounded-xl border-2 border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 transition-all peer-checked:border-primary peer-checked:bg-primary/5">
+<div class="w-12 h-12 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform peer-checked:bg-primary/20">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-300 group-peer-checked:text-primary">person_pin_circle</span>
+</div>
+<span class="text-sm font-bold text-slate-900 dark:text-slate-100">Rider</span>
+</div>
+<div class="absolute -top-2 -right-2 bg-primary text-white rounded-full p-0.5 hidden peer-checked:block">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+</label>
+<!-- Driver Option -->
+<label class="relative cursor-pointer group">
+<input class="peer sr-only" name="role" type="radio" value="driver"/>
+<div class="flex flex-col items-center justify-center p-4 rounded-xl border-2 border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 transition-all peer-checked:border-primary peer-checked:bg-primary/5">
+<div class="w-12 h-12 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform peer-checked:bg-primary/20">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-300 group-peer-checked:text-primary">directions_car</span>
+</div>
+<span class="text-sm font-bold text-slate-900 dark:text-slate-100">Driver</span>
+</div>
+<div class="absolute -top-2 -right-2 bg-primary text-white rounded-full p-0.5 hidden peer-checked:block">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+</label>
+</div>
+</div>
+<!-- Form Fields -->
+<div class="space-y-5">
+<div class="relative">
+<label class="block text-xs font-bold uppercase text-slate-500 dark:text-slate-400 mb-1.5 ml-1" for="full_name">Full Name</label>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-primary transition-colors">person</span>
+<input class="w-full pl-12 pr-4 py-3.5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all placeholder:text-slate-400 dark:placeholder:text-slate-600" id="full_name" placeholder="John Doe" type="text"/>
+</div>
+</div>
+<div class="relative">
+<label class="block text-xs font-bold uppercase text-slate-500 dark:text-slate-400 mb-1.5 ml-1" for="email">Email Address</label>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-primary transition-colors">mail</span>
+<input class="w-full pl-12 pr-4 py-3.5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all placeholder:text-slate-400 dark:placeholder:text-slate-600" id="email" placeholder="john@example.com" type="email"/>
+</div>
+</div>
+<div class="relative">
+<label class="block text-xs font-bold uppercase text-slate-500 dark:text-slate-400 mb-1.5 ml-1" for="phone">Phone Number</label>
+<div class="relative group flex">
+<div class="absolute left-4 top-1/2 -translate-y-1/2 flex items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined">call</span>
+</div>
+<input class="w-full pl-12 pr-4 py-3.5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all placeholder:text-slate-400 dark:placeholder:text-slate-600" id="phone" placeholder="+1 (555) 000-0000" type="tel"/>
+</div>
+</div>
+<div class="relative">
+<label class="block text-xs font-bold uppercase text-slate-500 dark:text-slate-400 mb-1.5 ml-1" for="password">Password</label>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-primary transition-colors">lock</span>
+<input class="w-full pl-12 pr-12 py-3.5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all placeholder:text-slate-400 dark:placeholder:text-slate-600" id="password" placeholder="••••••••" type="password"/>
+<button class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors" type="button">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Footer Actions -->
+<div class="mt-10 space-y-6">
+<button class="w-full bg-primary hover:bg-primary/90 text-slate-900 font-bold py-4 rounded-xl shadow-lg shadow-primary/20 transition-all active:scale-[0.98] flex items-center justify-center gap-2">
+                Create Account
+                <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<p class="text-center text-sm text-slate-500 dark:text-slate-400 leading-relaxed px-4">
+                By clicking "Create Account", you agree to our 
+                <a class="text-primary font-semibold hover:underline" href="#">Terms of Service</a> 
+                and <a class="text-primary font-semibold hover:underline" href="#">Privacy Policy</a>.
+            </p>
+</div>
+</main>
+<!-- Bottom Navigation Bar (Mimicking the component) -->
+<nav class="fixed bottom-0 left-0 right-0 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl border-t border-slate-200 dark:border-slate-800 pb-8 pt-3 px-6 flex justify-around items-center z-50">
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined">person_add</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Register</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">login</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Login</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">help_outline</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Help</span>
+</a>
+</nav>
+<!-- Map context background element (subtle) -->
+<div class="fixed inset-0 -z-10 opacity-[0.03] pointer-events-none overflow-hidden">
+<img class="w-full h-full object-cover scale-150 rotate-12" data-alt="Minimalist abstract map background pattern" data-location="San Francisco" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBN4L8ht2BSlYbuLviEwyIiviMM3DLnxcxS4tb9rax9O4414jt93vlriwssUbdxY9Y2jp4CAJTjfj_9PGSHcMiG0XK1PWxGNEOzYmo0i2liITQsuYuFo41cx7PgpZNb1gFL6ssxZv0EGbChHEey8Hq6iDp2F-corHf-IqtaVNobQWfXlwJFjqaYnokeb4nLWp-xIMo3oD8llImb4T_VaSMivTMzCH6aR74eYvy8FXwHHHnj1CnhQ4OCQU-qqq_YZ11CYzpanZauLw4"/>
+</div>
+</body></html>

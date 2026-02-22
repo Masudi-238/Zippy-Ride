@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Zippy Ride Selection</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ec6d",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#102218",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: "Plus Jakarta Sans", sans-serif;
+        }
+        .ios-shadow {
+            box-shadow: 0 -4px 20px -5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased overflow-hidden">
+<!-- Main App Container -->
+<div class="relative flex h-screen w-full flex-col overflow-hidden">
+<!-- Map Background Layer -->
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center" data-alt="A clean city map showing a green route line from point A to point B" data-location="San Francisco, USA" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAmJVMGWe-cAlagPmYr_d56Z6X56BoMyc3eTN1Za6KBWJfvkngs8iqTd2G9r2Q9r-0Zg8rRjWuNbqrfMfmZRQhhdCbBNwAaGMa9gLtVqMMJkvBSAFzaJ-eqVp1omRtOMX5_SyfQupoG4sij5QENM_teY_VJ6sM-evKunyt3kvDrSMY41P50IhDYW2b1re8JestCgGz-FZS6QZvnIkeTX1NmarCyUZfcpNEurgyl1Vyjsc3C8f2LhzCRAa9l7yZNbL6vLjeB6VxH35Y');">
+<!-- Map Overlay Elements (Pins/Route) -->
+<div class="relative w-full h-full">
+<!-- Pickup Pin -->
+<div class="absolute top-1/4 left-1/3 flex flex-col items-center">
+<div class="bg-primary p-2 rounded-full shadow-lg border-2 border-white">
+<span class="material-symbols-outlined text-slate-900 text-sm">my_location</span>
+</div>
+<div class="bg-white px-2 py-1 rounded-lg text-[10px] font-bold mt-1 shadow-sm border border-slate-200">Pickup</div>
+</div>
+<!-- Destination Pin -->
+<div class="absolute bottom-1/2 right-1/4 flex flex-col items-center">
+<div class="bg-slate-900 p-2 rounded-full shadow-lg border-2 border-white">
+<span class="material-symbols-outlined text-white text-sm">location_on</span>
+</div>
+<div class="bg-white px-2 py-1 rounded-lg text-[10px] font-bold mt-1 shadow-sm border border-slate-200">Drop-off</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Top Navigation Overlay -->
+<div class="relative z-10 flex items-center justify-between p-4 pt-12">
+<button class="flex size-11 items-center justify-center rounded-full bg-white shadow-lg text-slate-900">
+<span class="material-symbols-outlined">arrow_back_ios_new</span>
+</button>
+<div class="bg-white/90 backdrop-blur-md px-4 py-2 rounded-full shadow-lg flex items-center gap-2 border border-slate-100">
+<span class="size-2 rounded-full bg-primary animate-pulse"></span>
+<span class="text-xs font-bold uppercase tracking-wider">Finding Rides</span>
+</div>
+<button class="flex size-11 items-center justify-center rounded-full bg-white shadow-lg text-slate-900">
+<span class="material-symbols-outlined">info</span>
+</button>
+</div>
+<!-- Bottom Sheet Container -->
+<div class="relative z-20 mt-auto">
+<div class="ios-shadow flex flex-col rounded-t-[2.5rem] bg-white dark:bg-slate-900 px-6 pb-10 pt-3">
+<!-- Drag Handle -->
+<div class="mx-auto mb-4 h-1.5 w-12 rounded-full bg-slate-200 dark:bg-slate-700"></div>
+<h2 class="text-xl font-extrabold leading-tight tracking-tight text-slate-900 dark:text-white mb-6">Choose a ride</h2>
+<!-- Ride Selection List -->
+<div class="flex flex-col gap-3 max-h-[40vh] overflow-y-auto pr-1">
+<!-- Selected Option: Economy -->
+<div class="group flex items-center gap-4 rounded-2xl border-2 border-primary bg-primary/5 p-4 transition-all">
+<div class="relative flex size-16 shrink-0 items-center justify-center rounded-xl bg-primary/20">
+<span class="material-symbols-outlined text-3xl text-slate-900">directions_car</span>
+<div class="absolute -top-1 -right-1 bg-primary text-[10px] font-black px-1.5 rounded-full text-slate-900 border border-white">BEST</div>
+</div>
+<div class="flex flex-1 flex-col">
+<div class="flex items-center justify-between">
+<p class="text-lg font-bold text-slate-900 dark:text-white">Economy</p>
+<p class="text-lg font-black text-slate-900 dark:text-white leading-none">$12.50</p>
+</div>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="material-symbols-outlined text-sm text-primary">schedule</span>
+<p class="text-sm font-medium text-slate-600 dark:text-slate-400">3 min away</p>
+</div>
+</div>
+</div>
+<!-- Option: ZippyXL -->
+<div class="group flex items-center gap-4 rounded-2xl border border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 p-4 transition-all hover:bg-slate-100 dark:hover:bg-slate-800">
+<div class="flex size-16 shrink-0 items-center justify-center rounded-xl bg-slate-200 dark:bg-slate-700">
+<span class="material-symbols-outlined text-3xl text-slate-500">airport_shuttle</span>
+</div>
+<div class="flex flex-1 flex-col">
+<div class="flex items-center justify-between">
+<p class="text-lg font-bold text-slate-900 dark:text-white">ZippyXL</p>
+<p class="text-lg font-black text-slate-900 dark:text-white leading-none">$18.25</p>
+</div>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="material-symbols-outlined text-sm text-slate-400">schedule</span>
+<p class="text-sm font-medium text-slate-600 dark:text-slate-400">6 min away</p>
+</div>
+</div>
+</div>
+<!-- Option: Luxury -->
+<div class="group flex items-center gap-4 rounded-2xl border border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 p-4 transition-all hover:bg-slate-100 dark:hover:bg-slate-800">
+<div class="flex size-16 shrink-0 items-center justify-center rounded-xl bg-slate-200 dark:bg-slate-700">
+<span class="material-symbols-outlined text-3xl text-slate-500">electric_car</span>
+</div>
+<div class="flex flex-1 flex-col">
+<div class="flex items-center justify-between">
+<p class="text-lg font-bold text-slate-900 dark:text-white">Luxury</p>
+<p class="text-lg font-black text-slate-900 dark:text-white leading-none">$29.90</p>
+</div>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="material-symbols-outlined text-sm text-slate-400">schedule</span>
+<p class="text-sm font-medium text-slate-600 dark:text-slate-400">9 min away</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Payment Selector -->
+<div class="mt-6 flex items-center justify-between border-t border-slate-100 dark:border-slate-800 pt-6">
+<div class="flex items-center gap-3">
+<div class="flex h-8 w-12 items-center justify-center rounded bg-slate-100 dark:bg-slate-800">
+<span class="material-symbols-outlined text-slate-600">contactless</span>
+</div>
+<div class="flex flex-col">
+<p class="text-sm font-bold text-slate-900 dark:text-white leading-tight">Apple Pay</p>
+<p class="text-[10px] font-medium text-slate-500 uppercase tracking-tighter">Personal Account</p>
+</div>
+</div>
+<button class="text-sm font-bold text-primary">Change</button>
+</div>
+<!-- CTA Button -->
+<div class="mt-6">
+<button class="flex w-full items-center justify-center gap-2 rounded-2xl bg-primary py-4 text-center text-lg font-black text-slate-900 shadow-lg shadow-primary/20 active:scale-[0.98] transition-transform">
+<span>Book Economy Now</span>
+<span class="material-symbols-outlined font-bold">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Safe Area Bottom Bar (iOS style) -->
+<div class="h-6 bg-white dark:bg-slate-900"></div>
+</div>
+</div>
+</body></html>

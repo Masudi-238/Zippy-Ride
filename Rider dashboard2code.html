@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Zippy Ride - Rider Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ec6d",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#102218",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1.25rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 overflow-hidden">
+<div class="relative flex h-screen w-full flex-col max-w-[480px] mx-auto shadow-2xl bg-white dark:bg-background-dark overflow-hidden">
+<!-- Top Navigation / Header -->
+<div class="absolute top-0 left-0 right-0 z-30 flex items-center justify-between p-4 bg-gradient-to-b from-white/90 to-transparent dark:from-background-dark/90 dark:to-transparent">
+<div class="flex items-center gap-2">
+<div class="bg-primary p-1.5 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-background-dark font-bold text-xl">electric_car</span>
+</div>
+<h1 class="text-xl font-extrabold tracking-tight text-slate-900 dark:text-white">Zippy Ride</h1>
+</div>
+<button class="flex items-center justify-center size-10 rounded-full bg-white dark:bg-slate-800 shadow-md border border-slate-100 dark:border-slate-700">
+<span class="material-symbols-outlined text-slate-700 dark:text-slate-200">notifications</span>
+</button>
+</div>
+<!-- Full Screen Map Background -->
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-slate-200 dark:bg-slate-900 relative">
+<!-- Mock Map Representation -->
+<div class="absolute inset-0 opacity-40 grayscale-[0.5]" data-alt="Detailed city map showing streets and blocks" data-location="San Francisco" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAmJVMGWe-cAlagPmYr_d56Z6X56BoMyc3eTN1Za6KBWJfvkngs8iqTd2G9r2Q9r-0Zg8rRjWuNbqrfMfmZRQhhdCbBNwAaGMa9gLtVqMMJkvBSAFzaJ-eqVp1omRtOMX5_SyfQupoG4sij5QENM_teY_VJ6sM-evKunyt3kvDrSMY41P50IhDYW2b1re8JestCgGz-FZS6QZvnIkeTX1NmarCyUZfcpNEurgyl1Vyjsc3C8f2LhzCRAa9l7yZNbL6vLjeB6VxH35Y'); background-size: cover;">
+</div>
+<!-- Animated-like User Location Dot -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center">
+<div class="absolute size-10 bg-primary/30 rounded-full animate-ping"></div>
+<div class="size-6 bg-primary border-4 border-white dark:border-background-dark rounded-full shadow-lg relative z-10"></div>
+</div>
+<!-- Car Markers -->
+<div class="absolute top-1/3 left-1/4">
+<span class="material-symbols-outlined text-slate-800 dark:text-primary text-3xl drop-shadow-lg">directions_car</span>
+</div>
+<div class="absolute bottom-1/2 right-1/4">
+<span class="material-symbols-outlined text-slate-800 dark:text-primary text-3xl drop-shadow-lg">directions_car</span>
+</div>
+</div>
+</div>
+<!-- Main Dashboard Overlay (Bottom Sheet Style) -->
+<div class="absolute bottom-0 left-0 right-0 z-20 flex flex-col max-h-[75%] bg-white dark:bg-background-dark rounded-t-3xl shadow-[0_-8px_30px_rgba(0,0,0,0.12)] border-t border-slate-100 dark:border-slate-800 transition-transform duration-300">
+<!-- Handle Bar -->
+<div class="flex justify-center py-3">
+<div class="w-12 h-1.5 bg-slate-200 dark:bg-slate-700 rounded-full"></div>
+</div>
+<div class="flex-1 overflow-y-auto hide-scrollbar px-5 pb-24">
+<!-- Smart Wallet Widget -->
+<div class="mb-6 bg-primary/10 dark:bg-primary/5 border border-primary/20 rounded-2xl p-4 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="bg-primary size-10 rounded-xl flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-background-dark text-xl font-semibold">account_balance_wallet</span>
+</div>
+<div>
+<p class="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Smart Balance</p>
+<p class="text-xl font-extrabold text-slate-900 dark:text-white">$42.50</p>
+</div>
+</div>
+<button class="bg-primary hover:bg-primary/90 text-background-dark text-xs font-bold px-4 py-2 rounded-lg transition-colors">
+                        Add Funds
+                    </button>
+</div>
+<!-- Main Search Bar -->
+<div class="mb-8">
+<div class="flex items-center bg-slate-100 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-4 gap-3 shadow-sm hover:border-primary/50 transition-colors">
+<span class="material-symbols-outlined text-primary text-2xl">search</span>
+<input class="bg-transparent border-none focus:ring-0 w-full text-lg font-semibold placeholder:text-slate-400 dark:placeholder:text-slate-500 text-slate-900 dark:text-white" placeholder="Where to?" type="text"/>
+<div class="h-6 w-[1px] bg-slate-300 dark:bg-slate-600"></div>
+<span class="material-symbols-outlined text-slate-400">schedule</span>
+</div>
+</div>
+<!-- Quick Destinations Row -->
+<div class="mb-8">
+<h3 class="text-sm font-bold text-slate-500 dark:text-slate-400 mb-4 px-1 uppercase tracking-widest">Favorite Places</h3>
+<div class="flex gap-4 overflow-x-auto hide-scrollbar">
+<button class="flex flex-col items-center gap-2 group min-w-[72px]">
+<div class="size-14 rounded-2xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center group-hover:bg-primary/20 transition-colors border border-transparent group-hover:border-primary/30">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-300 group-hover:text-primary">home</span>
+</div>
+<span class="text-xs font-bold text-slate-700 dark:text-slate-300">Home</span>
+</button>
+<button class="flex flex-col items-center gap-2 group min-w-[72px]">
+<div class="size-14 rounded-2xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center group-hover:bg-primary/20 transition-colors border border-transparent group-hover:border-primary/30">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-300 group-hover:text-primary">work</span>
+</div>
+<span class="text-xs font-bold text-slate-700 dark:text-slate-300">Work</span>
+</button>
+<button class="flex flex-col items-center gap-2 group min-w-[72px]">
+<div class="size-14 rounded-2xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center group-hover:bg-primary/20 transition-colors border border-transparent group-hover:border-primary/30">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-300 group-hover:text-primary">fitness_center</span>
+</div>
+<span class="text-xs font-bold text-slate-700 dark:text-slate-300">Gym</span>
+</button>
+<button class="flex flex-col items-center gap-2 group min-w-[72px]">
+<div class="size-14 rounded-2xl border-2 border-dashed border-slate-200 dark:border-slate-700 flex items-center justify-center hover:border-primary/50 transition-colors">
+<span class="material-symbols-outlined text-slate-400">add</span>
+</div>
+<span class="text-xs font-bold text-slate-500">Add New</span>
+</button>
+</div>
+</div>
+<!-- Promotional Carousel -->
+<div class="mb-6">
+<div class="flex items-center justify-between mb-4 px-1">
+<h3 class="text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest">Offers For You</h3>
+<span class="text-primary text-xs font-bold cursor-pointer">View all</span>
+</div>
+<div class="flex gap-4 overflow-x-auto hide-scrollbar -mx-5 px-5">
+<div class="relative min-w-[280px] h-36 rounded-2xl overflow-hidden bg-background-dark group">
+<div class="absolute inset-0 bg-gradient-to-r from-black/80 to-transparent z-10 p-5 flex flex-col justify-center">
+<p class="text-primary text-xs font-extrabold uppercase mb-1">Promo Code: ZIP50</p>
+<h4 class="text-white text-lg font-bold leading-tight">50% Off your next<br/>3 Eco-Rides</h4>
+<button class="mt-3 w-fit bg-white/20 backdrop-blur-md text-white text-[10px] font-bold px-3 py-1.5 rounded-lg border border-white/30">Claim Offer</button>
+</div>
+<img class="absolute inset-0 object-cover w-full h-full opacity-60 group-hover:scale-110 transition-transform duration-500" data-alt="Modern green electric bus or taxi fleet" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACsBVzIETWQbRaGAyqkmR0l55aqVW0N_geW7cah6anuqUtvyzgl6zVP9jfPVal4mjyPPDxG3aNssWd3bfvyxqiEJym5usFAxLmU_B5hFjGtUVCYy5k1rzc3tHvb98mPHXwJOWnooHWmpZ1NhO3Jxb-TOYgft22-kkew9ptMMDci4xwPD-yWkITizvt8XQezTg_5kzqvzG6nv8d_lOdZ4FrxSDrxFn45ZLCTDMk2ooe9jwhR5RnEfyibWhKvBNZMQQB8c6tQXR3JCA"/>
+</div>
+<div class="relative min-w-[280px] h-36 rounded-2xl overflow-hidden bg-slate-900 group">
+<div class="absolute inset-0 bg-gradient-to-r from-primary/90 to-transparent z-10 p-5 flex flex-col justify-center">
+<p class="text-background-dark text-xs font-extrabold uppercase mb-1">Referral</p>
+<h4 class="text-background-dark text-lg font-bold leading-tight">Earn $10 for every<br/>friend referred</h4>
+<button class="mt-3 w-fit bg-background-dark text-white text-[10px] font-bold px-3 py-1.5 rounded-lg">Invite Now</button>
+</div>
+<img class="absolute inset-0 object-cover w-full h-full opacity-40 group-hover:scale-110 transition-transform duration-500" data-alt="Happy group of friends using smartphones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7EUNNyK2adeT2ZfbxxBi44xT-D3G7BJXVWN4QdeHOe-lwjmIl2XlxAH5ENXPyjlvaB_LuwdEOssMCN03v7AapCy902LAdBFWawmmNoseHmsqTgr_WoDfZmfxR06BEtITrWFJqaSQ1kFcygsATnwOTTa86f3hz_jFcklzkpsPXC7xbqSpHFKVk3NyvRnhqRJYDvSiqBob_F_D8-nor4x-3-ADbKejN-CxjLlSRfawjDfB0d8aejOisDQZAXAjXITgeQC3NAOuR-gY"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom NavBar Component Integration -->
+<div class="border-t border-slate-100 dark:border-slate-800 bg-white/80 dark:bg-background-dark/80 backdrop-blur-xl px-6 pt-3 pb-8 flex justify-between items-center absolute bottom-0 left-0 right-0">
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined text-[28px] fill-1">home</span>
+<span class="text-[10px] font-bold">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[28px]">receipt_long</span>
+<span class="text-[10px] font-bold">Activity</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[28px]">account_balance_wallet</span>
+<span class="text-[10px] font-bold">Wallet</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[28px]">person</span>
+<span class="text-[10px] font-bold">Profile</span>
+</a>
+</div>
+</div>
+<!-- Floating Action Button for Map Zoom -->
+<div class="absolute right-4 bottom-[55%] z-10 flex flex-col gap-2">
+<button class="bg-white dark:bg-slate-800 size-10 rounded-xl shadow-lg flex items-center justify-center text-slate-700 dark:text-slate-200 hover:bg-slate-50">
+<span class="material-symbols-outlined">my_location</span>
+</button>
+<button class="bg-white dark:bg-slate-800 size-10 rounded-xl shadow-lg flex items-center justify-center text-slate-700 dark:text-slate-200 hover:bg-slate-50">
+<span class="material-symbols-outlined">add</span>
+</button>
+<button class="bg-white dark:bg-slate-800 size-10 rounded-xl shadow-lg flex items-center justify-center text-slate-700 dark:text-slate-200 hover:bg-slate-50">
+<span class="material-symbols-outlined">remove</span>
+</button>
+</div>
+</div>
+</body></html>

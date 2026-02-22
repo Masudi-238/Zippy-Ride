@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Smart Wallet Management - Zippy Ride</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ec6d",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#102218",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex justify-center">
+<!-- Mobile Container (iPhone Pro Max roughly 430px) -->
+<div class="relative w-full max-w-[430px] bg-background-light dark:bg-background-dark min-h-screen flex flex-col shadow-2xl overflow-hidden">
+<!-- Header -->
+<header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-6 pt-12 pb-4 flex items-center justify-between">
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-white dark:bg-slate-800 shadow-sm">
+<span class="material-symbols-outlined text-slate-900 dark:text-white">arrow_back_ios_new</span>
+</button>
+<h1 class="text-lg font-bold tracking-tight">Smart Wallet</h1>
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-white dark:bg-slate-800 shadow-sm">
+<span class="material-symbols-outlined text-slate-900 dark:text-white">help_outline</span>
+</button>
+</header>
+<!-- Main Content -->
+<main class="flex-1 px-6 pb-24 overflow-y-auto hide-scrollbar">
+<!-- Balance Card -->
+<div class="mt-4 relative overflow-hidden bg-slate-900 dark:bg-primary/10 rounded-3xl p-8 text-white shadow-xl shadow-primary/10">
+<!-- Abstract Pattern Decoration -->
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/20 rounded-full blur-3xl -mr-16 -mt-16"></div>
+<div class="absolute bottom-0 left-0 w-24 h-24 bg-primary/10 rounded-full blur-2xl -ml-12 -mb-12"></div>
+<div class="relative z-10">
+<div class="flex items-center gap-2 mb-2 opacity-80">
+<span class="text-sm font-medium uppercase tracking-wider">Total Balance</span>
+<span class="material-symbols-outlined text-xs">info</span>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="text-4xl font-extrabold tracking-tight">$1,240</span>
+<span class="text-2xl font-semibold opacity-80">.50</span>
+</div>
+<div class="mt-8 flex items-center justify-between">
+<div class="flex -space-x-2">
+<div class="w-8 h-8 rounded-full border-2 border-slate-900 bg-slate-700 flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="User profile photo avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIDD0iIeVk7vhBtihWQxTBJC1SwJfxmkTsLLo1mROn2l06ZyFUj-elVlFQ27ClRL6N-c_2QqcprNwk584fshG4H0Nfkzxb9sbL-G4qXvcrjZa3c5iIIe4JzYydfMPSa7B6-wmVAvG2Vpny12zNiuy1F_96rn-GxbdY21KUtMB2K1uH-xNDK7M5Jtn-h2d3F3wRrHHr1ZqoDpridyfgviCitLhiE54hINzgYyhtqxNOSZe0WKZLGyYWeAvl3yb-ZdvTNsVZrLAYdjE"/>
+</div>
+<div class="w-8 h-8 rounded-full border-2 border-slate-900 bg-primary flex items-center justify-center text-[10px] font-bold text-slate-900">
+                                +3
+                            </div>
+</div>
+<div class="bg-primary/20 backdrop-blur-md border border-primary/30 px-3 py-1 rounded-full flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="text-xs font-bold text-primary">Active Card</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Actions -->
+<div class="mt-8 grid grid-cols-3 gap-4">
+<button class="group flex flex-col items-center gap-2">
+<div class="w-14 h-14 rounded-2xl bg-primary flex items-center justify-center text-slate-900 shadow-lg shadow-primary/20 group-active:scale-95 transition-transform">
+<span class="material-symbols-outlined font-bold">add_circle</span>
+</div>
+<span class="text-xs font-bold text-slate-600 dark:text-slate-400">Top Up</span>
+</button>
+<button class="group flex flex-col items-center gap-2">
+<div class="w-14 h-14 rounded-2xl bg-white dark:bg-slate-800 flex items-center justify-center text-slate-900 dark:text-white shadow-sm border border-slate-200 dark:border-slate-700 group-active:scale-95 transition-transform">
+<span class="material-symbols-outlined font-bold">send</span>
+</div>
+<span class="text-xs font-bold text-slate-600 dark:text-slate-400">Transfer</span>
+</button>
+<button class="group flex flex-col items-center gap-2">
+<div class="w-14 h-14 rounded-2xl bg-white dark:bg-slate-800 flex items-center justify-center text-slate-900 dark:text-white shadow-sm border border-slate-200 dark:border-slate-700 group-active:scale-95 transition-transform">
+<span class="material-symbols-outlined font-bold">account_balance_wallet</span>
+</div>
+<span class="text-xs font-bold text-slate-600 dark:text-slate-400">Withdraw</span>
+</button>
+</div>
+<!-- Transaction History Header -->
+<div class="mt-10 flex items-center justify-between mb-6">
+<h3 class="text-lg font-extrabold tracking-tight">Recent Activity</h3>
+<button class="text-sm font-bold text-primary flex items-center">
+                    See All
+                    <span class="material-symbols-outlined text-sm ml-1">chevron_right</span>
+</button>
+</div>
+<!-- Transaction List -->
+<div class="space-y-4">
+<!-- Item: Ride Payment -->
+<div class="bg-white dark:bg-slate-800/50 p-4 rounded-2xl flex items-center gap-4 border border-slate-100 dark:border-slate-800">
+<div class="w-12 h-12 rounded-xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined">directions_car</span>
+</div>
+<div class="flex-1">
+<h4 class="text-sm font-bold">Ride Payment #ZR-882</h4>
+<p class="text-xs text-slate-500 font-medium">Today, 2:45 PM</p>
+</div>
+<div class="text-right">
+<p class="text-sm font-bold text-slate-900 dark:text-white">-$12.40</p>
+<span class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Debit</span>
+</div>
+</div>
+<!-- Item: Wallet Top-up -->
+<div class="bg-white dark:bg-slate-800/50 p-4 rounded-2xl flex items-center gap-4 border border-slate-100 dark:border-slate-800">
+<div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">account_balance</span>
+</div>
+<div class="flex-1">
+<h4 class="text-sm font-bold">Top Up from Bank</h4>
+<p class="text-xs text-slate-500 font-medium">Yesterday, 10:15 AM</p>
+</div>
+<div class="text-right">
+<p class="text-sm font-bold text-primary">+$500.00</p>
+<span class="text-[10px] font-bold uppercase tracking-wider text-primary/70">Credit</span>
+</div>
+</div>
+<!-- Item: Reward -->
+<div class="bg-white dark:bg-slate-800/50 p-4 rounded-2xl flex items-center gap-4 border border-slate-100 dark:border-slate-800">
+<div class="w-12 h-12 rounded-xl bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center text-amber-500">
+<span class="material-symbols-outlined">card_giftcard</span>
+</div>
+<div class="flex-1">
+<h4 class="text-sm font-bold">Weekly Bonus Reward</h4>
+<p class="text-xs text-slate-500 font-medium">Mar 22, 6:00 PM</p>
+</div>
+<div class="text-right">
+<p class="text-sm font-bold text-amber-500">+$25.00</p>
+<span class="text-[10px] font-bold uppercase tracking-wider text-amber-500/70">Reward</span>
+</div>
+</div>
+<!-- Item: Ride Payment -->
+<div class="bg-white dark:bg-slate-800/50 p-4 rounded-2xl flex items-center gap-4 border border-slate-100 dark:border-slate-800 opacity-70">
+<div class="w-12 h-12 rounded-xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined">directions_car</span>
+</div>
+<div class="flex-1">
+<h4 class="text-sm font-bold">Ride Payment #ZR-712</h4>
+<p class="text-xs text-slate-500 font-medium">Mar 21, 11:30 AM</p>
+</div>
+<div class="text-right">
+<p class="text-sm font-bold text-slate-900 dark:text-white">-$18.25</p>
+<span class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Debit</span>
+</div>
+</div>
+</div>
+<!-- Security Footer -->
+<div class="mt-8 flex items-center justify-center gap-2 py-4">
+<span class="material-symbols-outlined text-slate-400 text-sm">lock</span>
+<span class="text-xs font-medium text-slate-400">Transactions are encrypted and secure</span>
+</div>
+</main>
+<!-- Bottom Navigation Bar (iOS Style) -->
+<nav class="absolute bottom-0 left-0 w-full bg-white/90 dark:bg-slate-900/90 backdrop-blur-lg border-t border-slate-200 dark:border-slate-800 px-6 pt-3 pb-8 flex justify-between items-center">
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-bold">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">directions_car</span>
+<span class="text-[10px] font-bold">Rides</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined fill-1">account_balance_wallet</span>
+<span class="text-[10px] font-bold">Wallet</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">notifications</span>
+<span class="text-[10px] font-bold">Activity</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-bold">Profile</span>
+</a>
+<!-- iOS Home Indicator -->
+<div class="absolute bottom-2 left-1/2 -translate-x-1/2 w-32 h-1.5 bg-slate-200 dark:bg-slate-700 rounded-full"></div>
+</nav>
+</div>
+</body></html>

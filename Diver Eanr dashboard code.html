@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Zippy Ride - Driver Earnings</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ec6d",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#102218",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .ios-shadow {
+            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased overflow-x-hidden">
+<!-- Main Container (Mobile Form Factor) -->
+<div class="relative mx-auto min-h-screen max-w-[430px] bg-background-light dark:bg-background-dark flex flex-col pb-24">
+<!-- Header / Status Bar Area -->
+<header class="sticky top-0 z-30 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-6 pt-12 pb-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-[24px]">account_balance_wallet</span>
+</div>
+<div>
+<h1 class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Earnings Dashboard</h1>
+<p class="text-lg font-bold">Zippy Ride Driver</p>
+</div>
+</div>
+<button class="w-10 h-10 rounded-full border border-slate-200 dark:border-slate-800 flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-300">notifications</span>
+</button>
+</div>
+</header>
+<!-- Main Scrollable Content -->
+<main class="flex-1 px-6 space-y-6">
+<!-- Weekly Earnings Summary -->
+<section class="mt-4">
+<div class="flex items-end justify-between mb-2">
+<div>
+<p class="text-sm font-medium text-slate-500 dark:text-slate-400">This Week (Mar 4 - 10)</p>
+<h2 class="text-4xl font-extrabold tracking-tight">$842.50</h2>
+</div>
+<div class="flex items-center gap-1 bg-primary/10 px-2 py-1 rounded-full">
+<span class="material-symbols-outlined text-primary text-sm">trending_up</span>
+<span class="text-xs font-bold text-primary">+12.5%</span>
+</div>
+</div>
+<!-- Weekly Bar Chart -->
+<div class="bg-white dark:bg-slate-900/50 rounded-2xl p-5 ios-shadow border border-slate-100 dark:border-slate-800">
+<div class="grid grid-cols-7 gap-3 items-end h-32 mb-2">
+<!-- Monday -->
+<div class="flex flex-col items-center gap-2 group">
+<div class="w-full bg-slate-100 dark:bg-slate-800 rounded-t-lg relative overflow-hidden" style="height: 30%;">
+<div class="absolute bottom-0 w-full bg-primary/40 h-full"></div>
+</div>
+<span class="text-[10px] font-bold text-slate-400">M</span>
+</div>
+<!-- Tuesday -->
+<div class="flex flex-col items-center gap-2">
+<div class="w-full bg-slate-100 dark:bg-slate-800 rounded-t-lg relative overflow-hidden" style="height: 65%;">
+<div class="absolute bottom-0 w-full bg-primary/40 h-full"></div>
+</div>
+<span class="text-[10px] font-bold text-slate-400">T</span>
+</div>
+<!-- Wednesday -->
+<div class="flex flex-col items-center gap-2">
+<div class="w-full bg-slate-100 dark:bg-slate-800 rounded-t-lg relative overflow-hidden" style="height: 90%;">
+<div class="absolute bottom-0 w-full bg-primary h-full"></div>
+</div>
+<span class="text-[10px] font-bold text-slate-900 dark:text-slate-100">W</span>
+</div>
+<!-- Thursday -->
+<div class="flex flex-col items-center gap-2">
+<div class="w-full bg-slate-100 dark:bg-slate-800 rounded-t-lg relative overflow-hidden" style="height: 45%;">
+<div class="absolute bottom-0 w-full bg-primary/40 h-full"></div>
+</div>
+<span class="text-[10px] font-bold text-slate-400">T</span>
+</div>
+<!-- Friday -->
+<div class="flex flex-col items-center gap-2">
+<div class="w-full bg-slate-100 dark:bg-slate-800 rounded-t-lg relative overflow-hidden" style="height: 75%;">
+<div class="absolute bottom-0 w-full bg-primary/40 h-full"></div>
+</div>
+<span class="text-[10px] font-bold text-slate-400">F</span>
+</div>
+<!-- Saturday -->
+<div class="flex flex-col items-center gap-2">
+<div class="w-full bg-slate-100 dark:bg-slate-800 rounded-t-lg relative overflow-hidden" style="height: 20%;">
+<div class="absolute bottom-0 w-full bg-primary/40 h-full"></div>
+</div>
+<span class="text-[10px] font-bold text-slate-400">S</span>
+</div>
+<!-- Sunday -->
+<div class="flex flex-col items-center gap-2">
+<div class="w-full bg-slate-100 dark:bg-slate-800 rounded-t-lg relative overflow-hidden" style="height: 15%;">
+<div class="absolute bottom-0 w-full bg-primary/40 h-full"></div>
+</div>
+<span class="text-[10px] font-bold text-slate-400">S</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Cash Out Section -->
+<section>
+<div class="bg-primary rounded-3xl p-6 relative overflow-hidden ios-shadow">
+<!-- Abstract pattern background -->
+<div class="absolute top-0 right-0 -mr-8 -mt-8 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
+<div class="absolute bottom-0 left-0 -ml-8 -mb-8 w-32 h-32 bg-black/5 rounded-full blur-2xl"></div>
+<div class="relative z-10">
+<div class="flex justify-between items-start mb-4">
+<div>
+<p class="text-sm font-semibold text-slate-900/60 uppercase">Today's Balance</p>
+<h3 class="text-3xl font-extrabold text-slate-900">$124.80</h3>
+</div>
+<span class="material-symbols-outlined text-slate-900/40 text-3xl">payments</span>
+</div>
+<p class="text-xs text-slate-900/70 mb-6 font-medium">Available for instant cash out to your bank.</p>
+<button class="w-full bg-slate-900 text-white font-bold py-4 rounded-xl active:scale-[0.98] transition-transform">
+                            Cash Out Now
+                        </button>
+</div>
+</div>
+</section>
+<!-- Key Metrics Stats Grid -->
+<section class="grid grid-cols-3 gap-3">
+<div class="bg-white dark:bg-slate-900/50 p-4 rounded-2xl border border-slate-100 dark:border-slate-800 flex flex-col items-center text-center ios-shadow">
+<span class="material-symbols-outlined text-primary mb-2">schedule</span>
+<p class="text-[10px] uppercase font-bold text-slate-400 mb-1">Online</p>
+<p class="text-sm font-bold">34h 20m</p>
+</div>
+<div class="bg-white dark:bg-slate-900/50 p-4 rounded-2xl border border-slate-100 dark:border-slate-800 flex flex-col items-center text-center ios-shadow">
+<span class="material-symbols-outlined text-primary mb-2">directions_car</span>
+<p class="text-[10px] uppercase font-bold text-slate-400 mb-1">Trips</p>
+<p class="text-sm font-bold">142</p>
+</div>
+<div class="bg-white dark:bg-slate-900/50 p-4 rounded-2xl border border-slate-100 dark:border-slate-800 flex flex-col items-center text-center ios-shadow">
+<span class="material-symbols-outlined text-primary mb-2">star</span>
+<p class="text-[10px] uppercase font-bold text-slate-400 mb-1">Rating</p>
+<p class="text-sm font-bold">4.95</p>
+</div>
+</section>
+<!-- Recent Activity -->
+<section class="pb-8">
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-lg font-bold">Recent Activity</h3>
+<button class="text-primary text-xs font-bold uppercase tracking-wide">View All</button>
+</div>
+<div class="space-y-3">
+<!-- Item 1 -->
+<div class="flex items-center justify-between p-4 bg-white dark:bg-slate-900/50 rounded-2xl border border-slate-100 dark:border-slate-800">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-400">person_pin_circle</span>
+</div>
+<div>
+<p class="text-sm font-bold">Downtown to Airport</p>
+<p class="text-xs text-slate-500">Today, 2:45 PM</p>
+</div>
+</div>
+<p class="text-sm font-extrabold text-primary">+$24.50</p>
+</div>
+<!-- Item 2 -->
+<div class="flex items-center justify-between p-4 bg-white dark:bg-slate-900/50 rounded-2xl border border-slate-100 dark:border-slate-800">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-400">history</span>
+</div>
+<div>
+<p class="text-sm font-bold">Weekly Bonus Tier 1</p>
+<p class="text-xs text-slate-500">Yesterday, 11:30 PM</p>
+</div>
+</div>
+<p class="text-sm font-extrabold text-primary">+$50.00</p>
+</div>
+<!-- Item 3 -->
+<div class="flex items-center justify-between p-4 bg-white dark:bg-slate-900/50 rounded-2xl border border-slate-100 dark:border-slate-800 opacity-60">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-400">person_pin_circle</span>
+</div>
+<div>
+<p class="text-sm font-bold">Uptown Delivery</p>
+<p class="text-xs text-slate-500">Yesterday, 8:15 PM</p>
+</div>
+</div>
+<p class="text-sm font-extrabold text-primary">+$12.20</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar (iOS Style) -->
+<nav class="fixed bottom-0 left-0 right-0 mx-auto max-w-[430px] bg-white/90 dark:bg-slate-950/90 backdrop-blur-xl border-t border-slate-200 dark:border-slate-800 px-6 py-3 pb-8 z-40">
+<div class="flex items-center justify-between">
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined text-[24px]">home</span>
+<span class="text-[10px] font-bold uppercase">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined text-[24px] fill-current" style="font-variation-settings: 'FILL' 1">bar_chart</span>
+<span class="text-[10px] font-bold uppercase">Earnings</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined text-[24px]">history</span>
+<span class="text-[10px] font-bold uppercase">Trips</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined text-[24px]">person</span>
+<span class="text-[10px] font-bold uppercase">Profile</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined text-[24px]">settings</span>
+<span class="text-[10px] font-bold uppercase">Settings</span>
+</a>
+</div>
+</nav>
+<!-- Profile / Quick Map Mini Card (Visual Flavor) -->
+<div class="px-6 pb-6">
+<div class="bg-slate-100 dark:bg-slate-800 rounded-2xl p-4 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<img alt="Driver Profile" class="w-10 h-10 rounded-full object-cover border-2 border-primary" data-alt="Close up portrait of a smiling male driver" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKThO132UYsL5pdW5_AU7EYiMM_r_fBBgvgz2BRkIsAlivLE-ANd9mtT2ETiYI1FEAyf3RhjYmJNEkhChYn3cwhfL3ZJjIOWZh_hStKPyneRIV1eNPqtBzvBFxE3UZe-x5rHgsfF62HB5C5wJB5rzMjd7J_TYvWzMmO32xikpMGWPd0JqvedoDF_GyfdyArcMnBOeUYB-6oU_NvWnNIKj4Cz0B5d19X-wvEpEOCs0wfVdZG67AK-eINs0YhXe3fvWx1HDIEtMl9Ow"/>
+<div>
+<p class="text-xs font-bold text-slate-500 uppercase tracking-tighter">Current Status</p>
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
+<p class="text-sm font-bold">Online &amp; Active</p>
+</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-400">chevron_right</span>
+</div>
+</div>
+</div>
+</body></html>

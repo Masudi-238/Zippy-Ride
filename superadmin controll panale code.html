@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Zippy Ride Super Admin Control Panel</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ec6d",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#102218",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .ios-blur {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
+<!-- Top Status Bar (iOS Style Placeholder) -->
+<div class="flex justify-between items-center px-6 pt-4 pb-2 bg-background-light dark:bg-background-dark sticky top-0 z-50">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full border-2 border-primary overflow-hidden bg-slate-200">
+<div class="w-full h-full bg-cover bg-center" data-alt="Super Admin professional profile portrait" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDj_XQGEOFiCsVoNBIlvj62Rcizs486_l-MRo1Gdu_RiV_MDqKdjX9fiQ8-ZvtV_1t4_CmelQ9jgm-qCsn4UgtohW_wRAG23uB02z0eXXfzXLXNj38n1r3TS19Ft7YhKR0RvwDlOBiNgRt8aNXUOHLFWjIAFzF7qH8JmpXpCyFUyB_Zdj1twzWAptFE_Ies2r2LJ2IRp6s4EIs7Vz06a-Q4ylT6OXWZcW-Ws67YUNcqZ-lUMb47FQyRVgAX-lf2zLqe0XUfCaQZ1xU')"></div>
+</div>
+<div>
+<h1 class="text-sm font-medium text-slate-500 dark:text-slate-400 leading-tight">Zippy Ride</h1>
+<h2 class="text-lg font-bold leading-tight">Super Admin</h2>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="p-2 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200">
+<span class="material-symbols-outlined text-[24px]">search</span>
+</button>
+<button class="p-2 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 relative">
+<span class="material-symbols-outlined text-[24px]">notifications</span>
+<span class="absolute top-2 right-2 size-2 bg-red-500 rounded-full border-2 border-white dark:border-background-dark"></span>
+</button>
+</div>
+</div>
+<!-- Main Content -->
+<main class="px-4 pb-24">
+<!-- Quick Metrics Grid -->
+<div class="grid grid-cols-2 gap-3 mt-4">
+<div class="bg-white dark:bg-slate-900 p-4 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800">
+<div class="flex items-center justify-between mb-2">
+<span class="material-symbols-outlined text-primary">groups</span>
+<span class="text-[10px] font-bold text-primary bg-primary/10 px-1.5 py-0.5 rounded">+12%</span>
+</div>
+<p class="text-xs text-slate-500 dark:text-slate-400">Total Riders</p>
+<p class="text-xl font-bold">124.5k</p>
+</div>
+<div class="bg-white dark:bg-slate-900 p-4 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800">
+<div class="flex items-center justify-between mb-2">
+<span class="material-symbols-outlined text-primary">local_taxi</span>
+<span class="text-[10px] font-bold text-primary bg-primary/10 px-1.5 py-0.5 rounded">+5%</span>
+</div>
+<p class="text-xs text-slate-500 dark:text-slate-400">Active Drivers</p>
+<p class="text-xl font-bold">8,230</p>
+</div>
+<div class="bg-white dark:bg-slate-900 p-4 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800">
+<div class="flex items-center justify-between mb-2">
+<span class="material-symbols-outlined text-primary">payments</span>
+<span class="text-[10px] font-bold text-red-500 bg-red-500/10 px-1.5 py-0.5 rounded">-2%</span>
+</div>
+<p class="text-xs text-slate-500 dark:text-slate-400">Daily Revenue</p>
+<p class="text-xl font-bold">$42.8k</p>
+</div>
+<div class="bg-white dark:bg-slate-900 p-4 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800">
+<div class="flex items-center justify-between mb-2">
+<span class="material-symbols-outlined text-primary">route</span>
+<span class="text-[10px] font-bold text-primary bg-primary/10 px-1.5 py-0.5 rounded">+8%</span>
+</div>
+<p class="text-xs text-slate-500 dark:text-slate-400">Total Trips</p>
+<p class="text-xl font-bold">15.2k</p>
+</div>
+</div>
+<!-- AI Surge Control Card -->
+<div class="mt-6">
+<div class="flex items-center justify-between mb-3">
+<h3 class="text-lg font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">psychology</span>
+                    AI Surge Control
+                </h3>
+<span class="text-xs font-medium text-primary flex items-center gap-1">
+<span class="size-2 bg-primary rounded-full"></span> Live
+                </span>
+</div>
+<div class="bg-white dark:bg-slate-900 rounded-xl overflow-hidden shadow-md border border-slate-100 dark:border-slate-800">
+<div class="relative h-40 w-full bg-slate-200 overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A futuristic neon city map heatmap" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC6qs88KQf1h-axUyGpNGHXsTa3a3d9iwSCW5JvS_ENVeWbZGOScQ8_NsSZC0OIiB9ABRPu2TqUXry9MGUrHd-Zeh0Dm3NpqXisZaB8NMQTG20ALtmnL0_UOXFTIR8nCrkRPvK4GiLdQAD0IVrJfygUGoyFp_2Im4NG2s304K7Gdw9Cu18GJIsdEqcMDo9P4imhyCbFDALe99KCXDDJ0rokm5PChG0JRkYtMYM_yvDja7tHRrkZXm7x-_F2SYLTwZ3c0i0bdo4kJ-E')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
+<div class="absolute bottom-4 left-4">
+<p class="text-white text-xs font-medium opacity-80">Downtown Core</p>
+<p class="text-white text-lg font-bold">Dynamic Surge: 1.5x</p>
+</div>
+<button class="absolute top-4 right-4 bg-primary text-slate-900 text-xs font-bold px-3 py-1.5 rounded-full">
+                        Update AI
+                    </button>
+</div>
+<div class="p-4">
+<div class="flex items-center justify-between">
+<p class="text-sm text-slate-600 dark:text-slate-400">Demand is high in Downtown. AI recalibration successful.</p>
+<button class="ml-4 shrink-0 bg-primary/10 text-primary p-2 rounded-lg">
+<span class="material-symbols-outlined">map</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- System Alerts Feed -->
+<div class="mt-6">
+<div class="flex items-center justify-between mb-3">
+<h3 class="text-lg font-bold">Critical Alerts</h3>
+<button class="text-xs font-bold text-primary">View All</button>
+</div>
+<div class="space-y-3">
+<!-- Alert Item -->
+<div class="flex gap-4 bg-white dark:bg-slate-900 p-4 rounded-xl border-l-4 border-red-500 shadow-sm">
+<div class="shrink-0 size-10 rounded-full bg-red-100 dark:bg-red-900/30 flex items-center justify-center text-red-600">
+<span class="material-symbols-outlined">warning</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<h4 class="font-bold text-sm">Server Latency: East Zone</h4>
+<span class="text-[10px] text-slate-400">2m ago</span>
+</div>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Response times increased by 250ms in Brooklyn sector.</p>
+</div>
+</div>
+<!-- Alert Item -->
+<div class="flex gap-4 bg-white dark:bg-slate-900 p-4 rounded-xl border-l-4 border-amber-500 shadow-sm">
+<div class="shrink-0 size-10 rounded-full bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center text-amber-600">
+<span class="material-symbols-outlined">shield_person</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<h4 class="font-bold text-sm">Suspicious Activity</h4>
+<span class="text-[10px] text-slate-400">14m ago</span>
+</div>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Multi-account login attempt detected from IP: 192.168.1.1</p>
+</div>
+</div>
+<!-- Alert Item -->
+<div class="flex gap-4 bg-white dark:bg-slate-900 p-4 rounded-xl border-l-4 border-primary shadow-sm">
+<div class="shrink-0 size-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">check_circle</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<h4 class="font-bold text-sm">Payouts Completed</h4>
+<span class="text-[10px] text-slate-400">45m ago</span>
+</div>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Weekly driver payouts have been successfully processed.</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar (iOS Standard Style) -->
+<nav class="fixed bottom-0 left-0 right-0 bg-white/80 dark:bg-slate-900/80 ios-blur border-t border-slate-200 dark:border-slate-800 pb-8 pt-2 px-6 flex justify-between items-center">
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined fill-current" style="font-variation-settings: 'FILL' 1">dashboard</span>
+<span class="text-[10px] font-bold">Dashboard</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined">steering_wheel_heat</span>
+<span class="text-[10px] font-medium">Operations</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="text-[10px] font-medium">Users</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-medium">Settings</span>
+</a>
+</nav>
+</body></html>
