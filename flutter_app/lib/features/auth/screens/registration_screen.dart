@@ -7,6 +7,7 @@ import '../../../widgets/zippy_text_field.dart';
 import '../../../widgets/zippy_app_bar.dart';
 import '../../../widgets/loading_overlay.dart';
 import '../providers/auth_provider.dart';
+import '../../../app.dart';
 
 /// Registration screen matching the Zippy Ride HTML design.
 /// Features: step progress indicator, role selector (Rider/Driver),
@@ -49,7 +50,9 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
     );
 
     if (success && mounted) {
-      Navigator.of(context).pushReplacementNamed('/rider-dashboard');
+      final user = authProvider.user;
+      final route = user != null ? ZippyRideApp.getDashboardRoute(user.role) : '/rider-dashboard';
+      Navigator.of(context).pushReplacementNamed(route);
     }
   }
 

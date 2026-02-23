@@ -6,6 +6,7 @@ import '../../../widgets/zippy_button.dart';
 import '../../../widgets/zippy_text_field.dart';
 import '../../../widgets/loading_overlay.dart';
 import '../providers/auth_provider.dart';
+import '../../../app.dart';
 
 /// Login screen matching the Zippy Ride login HTML design.
 /// Features: email/phone input, password with visibility toggle,
@@ -43,10 +44,8 @@ class _LoginScreenState extends State<LoginScreen> {
       // Navigate based on user role
       final user = authProvider.user;
       if (user != null) {
-        switch (user.role) {
-          case _:
-            Navigator.of(context).pushReplacementNamed('/rider-dashboard');
-        }
+        final route = ZippyRideApp.getDashboardRoute(user.role);
+        Navigator.of(context).pushReplacementNamed(route);
       }
     }
   }
