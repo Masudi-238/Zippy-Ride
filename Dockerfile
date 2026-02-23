@@ -1,22 +1,52 @@
-# Dockerfile for Zippy Ride
+# ===========================================
+# Zippy Ride Backend - Production Dockerfile
+# ===========================================
+# Multi-stage build for minimal production image
 
-# Use an official Python runtime as a parent image
-FROM python:3.8-slim
+# Stage 1: Build
+FROM node:18-alpine AS builder
 
-# Set the working directory in the container
 WORKDIR /app
 
-# Copy the current directory contents into the container at /app
-COPY . /app
+# Copy package files
+COPY backend/package.json backend/package-lock.json* ./
 
-# Install any needed packages specified in requirements.txt
-RUN pip install --no-cache-dir -r requirements.txt
+# Install dependencies
+RUN npm ci --only=production && \
+    cp -R node_modules prod_node_modules && \
+    npm ci
 
-# Make port 80 available to the world outside this container
-EXPOSE 80
+# Copy source
+COPY backend/ .
 
-# Define environment variable
-ENV NAME ZippyRide
+# Build TypeScript
+RUN npm run build
 
-# Run app.py when the container launches
-CMD [ "python", "app.py" ]
+# Stage 2: Production
+FROM node:18-alpine AS production
+
+# Add non-root user
+RUN addgroup -g 1001 -S appgroup && \
+    adduser -S appuser -u 1001 -G appgroup
+
+WORKDIR /app
+
+# Copy production dependencies and built files
+COPY --from=builder /app/prod_node_modules ./node_modules
+COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/package.json ./
+
+# Create logs directory
+RUN mkdir -p logs && chown -R appuser:appgroup /app
+
+USER appuser
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
+  CMD wget --no-verbose --tries=1 --spider http://localhost:3000/health || exit 1
+
+EXPOSE 3000
+
+ENV NODE_ENV=production
+
+CMD ["node", "dist/index.js"]
